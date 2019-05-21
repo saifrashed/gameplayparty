@@ -13,7 +13,7 @@ $( document ).ready(function() {
         console.log(id);
         location.href = '?op=read&id=' + id;
     };
-    
+
 
     /**
      * Return home button
