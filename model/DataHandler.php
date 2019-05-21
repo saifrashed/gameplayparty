@@ -23,36 +23,37 @@ class DataHandler {
         }
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
         $this->dbh = null;
     }
 
     public function createData($sql){
-        $this->dbh->query($sql, PDO::FETCH_ASSOC);
+        $this->dbh->query($sql,PDO::FETCH_ASSOC);
         return $this->dbh->lastInsertId();
     }
 
     public function readData($sql){
+        return $this->dbh->query($sql,PDO::FETCH_ASSOC);
         $this->dbh->query($sql);
         return $this->dbh->fetch(PDO::FETCH_ASSOC);
     }
+
     public function readsData($sql){
        //$this->query($sql);
         return $this->dbh->query($sql,PDO::FETCH_ASSOC);
     }
+
     public function updateData($sql){
         $this->query($sql);
         return $this->rowCount();
     }
+
     public function deleteData($sql){
         $sth = $this->dbh->query($sql);
         return $sth->rowCount();
     }
+
     public function searchData($sql){
         return $this->dbh->query($sql,PDO::FETCH_ASSOC);
     }
-}
-
-
-?>
+};

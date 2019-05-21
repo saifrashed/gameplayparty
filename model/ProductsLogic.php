@@ -12,16 +12,16 @@ class ProductsLogic {
     }
 
     public function readProduct($id) {
-
-
-    }
-
-    public function readProducts() {
-        $result = $this->DataHandler->readsData('SELECT * FROM products;');
-
+        $result = $this->DataHandler->readData('SELECT * FROM products WHERE product_id='.$id.';');
         return $result;
     }
 
+    public function readProducts($productsPerPage, $page) {
+        $offset = $page * $productsPerPage;
+        $result = $this->DataHandler->readsData('SELECT * FROM products LIMIT '.$offset.','.$productsPerPage.' ;');
+
+        return $result;
+    }
 
     public function createProduct($name, $phone, $email, $adres) {
 
@@ -32,11 +32,17 @@ class ProductsLogic {
     }
 
     public function searchProduct($query) {
-
+        $result = $this->DataHandler->readData('SELECT * FROM products WHERE product_name LIKE "%'.$query.'%";');
+        return $result;
     }
 
     public function deleteProduct($id) {
+    }
 
+    public function rowsCount() {
+        $result = $this->DataHandler->readsData('SELECT * FROM products;');
+
+        return $result->rowCount();
     }
 }
 

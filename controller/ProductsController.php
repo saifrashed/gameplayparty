@@ -46,15 +46,25 @@ class ProductsController {
     }
 
     public function collectReadProduct($id) {
-
+        $product = $this->ProductsLogic->readProduct($id);
+        include './view/read_product.php';
+        echo $this->Utilities->createTable($product);
     }
 
     public function collectReadProducts() {
-        $products = $this->ProductsLogic->readProducts();
+        $productPerPage = 5;
+        $amountPages = $this->ProductsLogic->rowsCount() / $productPerPage;
+
+        if(!empty($_REQUEST['page'])) {
+            $products = $this->ProductsLogic->readProducts($productPerPage, $_REQUEST['page']);
+        } else {
+            $products = $this->ProductsLogic->readProducts(5, 0);
+
+        }
 
         include './view/read_products.php';
 
-        echo $this->Utilities->createTable($products);
+        echo $this->Utilities->createTable($products, $amountPages);
     }
 
     public function collectCreateProduct() {
@@ -68,9 +78,14 @@ class ProductsController {
     }
 
     public function collectSearchProduct($query) {
+        $products = $this->ProductsLogic->searchProduct($query);
+        include './view/search.php';
 
+        if($products->rowCount()) {
+            echo $this->Utilities->createTable($products);
+        } else {
+            echo 'No results';
+        }
     }
-
-
 }
 
