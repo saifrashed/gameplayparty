@@ -72,7 +72,5 @@ class ProductsController {
     public function collectSearchProduct($query) {
 
     }
-
-
 }
 
