@@ -16,8 +16,10 @@ class ProductsLogic {
         return $result;
     }
 
-    public function readProducts() {
-        $result = $this->DataHandler->readsData('SELECT * FROM products;');
+    public function readProducts($productsPerPage, $page) {
+        $offset = $page * $productsPerPage;
+        $result = $this->DataHandler->readsData('SELECT * FROM products LIMIT '.$offset.','.$productsPerPage.' ;');
+
         return $result;
     }
 
@@ -35,7 +37,12 @@ class ProductsLogic {
     }
 
     public function deleteProduct($id) {
+    }
 
+    public function rowsCount() {
+        $result = $this->DataHandler->readsData('SELECT * FROM products;');
+
+        return $result->rowCount();
     }
 }
 

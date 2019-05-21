@@ -17,5 +17,6 @@
 
     <div class="col-xs-9 col-md-9">
         <button class="btn btn-light" style="float:right;"><i class="fas fa-plus"></i> Create product</button>
+        <button class="btn btn-light" style="float:right; margin-right: 10px;"><i class="far fa-check-square"></i> Delete selected </button>
     </div>
 </div>

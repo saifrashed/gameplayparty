@@ -1,9 +1,8 @@
-
 /**
  * Javascript file stardunks
  */
 
-$( document ).ready(function() {
+$(document).ready(function () {
 
     /**
      * redirect for single product read
@@ -34,7 +33,7 @@ $( document ).ready(function() {
 
         console.log(isChecked);
 
-        if(isChecked) {
+        if (isChecked) {
             $('.item-checkbox').each(function () {
                 $(this).prop("checked", true);
             });

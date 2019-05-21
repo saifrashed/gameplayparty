@@ -10,12 +10,13 @@ class Utilities
 {
 
     /**
-     * Creates table
+     * Creates table and adds pagination buttons
      *
      * @param $result
+     * @param null $amountPages
      * @return string
      */
-    public function createTable($result)
+    public function createTable($result, $amountPages = NULL)
     {
 
         $tableheader = false;
@@ -55,6 +56,11 @@ class Utilities
         }
 
         $html .= '</table></div></div>';
+
+        for($index = 0; $amountPages > $index; $index++) {
+            $html .= '<a href="?op=reads&page='.$index.'">'.($index+1).'</a>';
+        }
+
 
         return $html;
     }
