@@ -9,7 +9,7 @@ $( document ).ready(function() {
      * redirect for single product read
      * @param id
      */
-    let singleProduct = (id) => {
+    singleProduct = (id) => {
         console.log(id);
         location.href = '?op=read&id=' + id;
     };
@@ -18,10 +18,13 @@ $( document ).ready(function() {
     /**
      * Return home button
      */
-    let returnHome = () => {
+    returnHome = () => {
         location.href = '?op=reads';
     };
 
+    formValidation = () => {
+
+    };
 
     /**
      * Bulk checkboxes

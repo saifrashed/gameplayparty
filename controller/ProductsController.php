@@ -70,7 +70,15 @@ class ProductsController {
     }
 
     public function collectSearchProduct($query) {
+        $products = $this->ProductsLogic->searchProduct($query);
+        include './view/search.php';
 
+
+        if($products->rowCount()) {
+            echo $this->Utilities->createTable($products);
+        } else {
+            echo 'No results';
+        }
     }
 }
 

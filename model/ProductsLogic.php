@@ -30,7 +30,8 @@ class ProductsLogic {
     }
 
     public function searchProduct($query) {
-
+        $result = $this->DataHandler->readData('SELECT * FROM products WHERE product_name LIKE "%'.$query.'%";');
+        return $result;
     }
 
     public function deleteProduct($id) {
