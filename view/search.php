@@ -1,0 +1,1 @@
+<h1>Search products</h1>
