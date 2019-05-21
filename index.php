@@ -6,4 +6,3 @@ $controller = new ProductsController();
 $controller->handleRequest();
 
 include 'view/footer.php';
-?>

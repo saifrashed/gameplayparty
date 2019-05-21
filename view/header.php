@@ -31,3 +31,5 @@ switch ($_SERVER['PHP_SELF']) {
 </head>
 
 <body>
+
+<div class="container-fluid">

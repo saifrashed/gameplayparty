@@ -47,7 +47,6 @@ class Utilities {
         $html .= '</table>';
 
         return $html;
-
     }
 
 }
