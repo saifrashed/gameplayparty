@@ -21,7 +21,6 @@ class ProductsLogic {
         return $result;
     }
 
-
     public function createProduct($name, $phone, $email, $adres) {
 
     }
