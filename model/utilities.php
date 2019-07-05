@@ -6,21 +6,19 @@
  * used to speed up development
  */
 
-class Utilities
-{
+class Utilities {
 
     /**
      * Creates table and adds pagination buttons
      *
-     * @param $result
+     * @param      $result
      * @param null $amountPages
      * @return string
      */
-    public function createTable($result, $amountPages = NULL)
-    {
+    public function createTable($result, $amountPages = null) {
 
         $tableheader = false;
-        $html = "";
+        $html        = "";
 
         $html .= '<div class="row">';
         $html .= '<div class="col-xs-12 col-md-12">';
@@ -35,12 +33,12 @@ class Utilities
                 foreach ($row as $key => $value) {
                     $html .= '<th>  ' . $key . '</th>';
                 }
-                $html .= '<th colspan="3" style="text-align: left;">Actions';
-                $html .= "</tr>";
+                $html        .= '<th colspan="3" style="text-align: left;">Actions';
+                $html        .= "</tr>";
                 $tableheader = true;
             }
 
-            $html .= '<tr>';
+            $html .= '<tr data-product-id="'.$row['product_id'].'">';
             $html .= '<td><input class="item-checkbox" type="checkbox" /></td> ';
 
             $row['product_price'] = $this->priceFormating($row['product_price']);
@@ -57,10 +55,21 @@ class Utilities
 
         $html .= '</table></div></div>';
 
-        for($index = 0; $amountPages > $index; $index++) {
-            $html .= '<a href="?op=reads&page='.$index.'">'.($index+1).'</a>';
+        for ($index = 0; $amountPages > $index; $index++) {
+            $html .= '<a href="?op=reads&page=' . $index . '">' . ($index + 1) . '</a>';
         }
 
+        $html .= '<form method="GET" style="width:300px; float:right">
+            <div class="input-group">
+                <input type="hidden" name="op" value="operation"/>
+                <input class="form-control" type="text" name="query" placeholder="Date from .. to .." aria-label="Search product...">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>';
+
+        $html .= '<button class="btn btn-light" style="float:right; margin-right: 10px;"><i class="fas fa-file-export"></i></i> Export to CSV </button>';
 
         return $html;
     }

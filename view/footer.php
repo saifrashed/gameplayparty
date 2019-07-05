@@ -8,13 +8,8 @@
 
 ?>
 
-<div class="row center-xs">
-    <div class="col-xs-12 col-md-12">
-        <footer>
-            <span>Copyright Saif Rashed</span>
-        </footer>
-    </div>
-</div>
+
+
 
 </div>
 

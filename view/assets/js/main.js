@@ -25,6 +25,16 @@ $(document).ready(function () {
 
     };
 
+
+    /**
+     * Redirect to new product page
+     */
+
+    newProduct = () => {
+        location.href = '?op=create';
+    };
+
+
     /**
      * Bulk checkboxes
      */
@@ -43,5 +53,8 @@ $(document).ready(function () {
             });
         }
     });
+
+
+
 
 });
