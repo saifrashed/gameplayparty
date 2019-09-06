@@ -3,7 +3,7 @@ require_once 'model/BookingLogic.php';
 require_once 'model/utilities.php';
 
 
-class ProductsController {
+class BookingController {
     public function __construct() {
         $this->ProductsLogic = new BookingLogic();
         $this->Utilities = new Utilities();

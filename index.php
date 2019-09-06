@@ -1,8 +1,8 @@
 <?php
 include 'view/header.php';
-require_once 'controller/ProductsController.php';
+require_once 'controller/BookingController.php';
 
-$controller = new ProductsController();
+$controller = new BookingController();
 $controller->handleRequest();
 
 include 'view/footer.php';
