@@ -16,6 +16,9 @@ class BookingController {
         try {
             $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : NULL;
             switch ($op) {
+                case 'contact':
+                    $this->collectContact();
+                    break;
                 case 'home':
                     $this->collectHome();
                     break;
@@ -32,7 +35,10 @@ class BookingController {
 
     public function collectHome() {
         include './view/home.php';
-        echo 'works';
+    }
+
+    public function collectContact() {
+        include './view/contact.php';
     }
 }
 
