@@ -1,0 +1,27 @@
+/*
+    All the styling for the header
+ */
+
+
+header {
+
+}
+
+
+header div.header-logo {
+    display: inline-block;
+}
+
+header .header-logo img {
+    position: relative;
+    left: -50px;
+    width: 70%;
+}
+
+nav.menu-desktop {
+    float:right;
+}
+
+nav.menu-desktop ul li {
+    display: inline-block;
+}

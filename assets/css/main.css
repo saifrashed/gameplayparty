@@ -1,3 +1,10 @@
-body {
-    color: red;
-}
+/**
+CSS partial imports
+ */
+
+@import url('essentials.css');
+@import url('header.css');
+@import url('home.css');
+@import url('reservations.css');
+@import url('about.css');
+@import url('contact.css');

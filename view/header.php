@@ -29,3 +29,19 @@ session_start();
 <body>
 
 <div class="container-fluid">
+
+    <div class="row">
+        <header class="col-xs-12">
+            <div class="col-xs-12 col-md-4 header-logo">
+                <img src="./assets/img/logo.svg">
+            </div>
+            <nav class="col-xs-12 col-md-8 menu-desktop">
+                <ul>
+                    <li><a href="?op=home">Home</a></li>
+                    <li><a href="?op=reservations">Reserveren</a></li>
+                    <li><a href="?op=about">Over ons</a></li>
+                    <li><a href="?op=contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>

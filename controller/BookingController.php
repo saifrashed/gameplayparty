@@ -19,6 +19,12 @@ class BookingController {
                 case 'contact':
                     $this->collectContact();
                     break;
+                case 'about':
+                    $this->collectAbout();
+                    break;
+                case 'reservations':
+                    $this->collectReservations();
+                    break;
                 case 'home':
                     $this->collectHome();
                     break;
@@ -35,6 +41,14 @@ class BookingController {
 
     public function collectHome() {
         include './view/home.php';
+    }
+
+    public function collectReservations() {
+        include './view/reservations.php';
+    }
+
+    public function collectAbout() {
+        include './view/about.php';
     }
 
     public function collectContact() {
