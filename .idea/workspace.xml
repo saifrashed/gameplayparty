@@ -18,6 +18,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1285300821">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.49" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="2" />
+          <entry key="php" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="2" />
+          <entry key="PHP" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="330" />
+          <entry key="php" value="752" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="330" />
+          <entry key="PHP" value="752" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
@@ -28,8 +65,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/footer.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="90">
               <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="714">
+              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+=======
+            <state relative-caret-position="210">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
             </state>
           </provider>
         </entry>
@@ -37,8 +84,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/header.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="615">
               <caret line="46" column="6" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="630">
+              <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+=======
+            <state relative-caret-position="510">
+              <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
             </state>
           </provider>
         </entry>
@@ -46,8 +103,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/header.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="164">
               <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="210">
+=======
+            <state relative-caret-position="150">
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
             </state>
           </provider>
         </entry>
@@ -55,8 +121,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/home.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="15">
               <caret line="1" selection-start-line="1" selection-end-line="1" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="168">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+=======
+            <state relative-caret-position="60">
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
             </state>
           </provider>
         </entry>
@@ -64,13 +140,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state>
               <caret lean-forward="true" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="168">
+              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+=======
+            <state relative-caret-position="435">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/model/CustomerLogic.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -84,6 +171,47 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+=======
+        <entry file="file://$PROJECT_DIR$/assets/css/home.css">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="105">
+              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+=======
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="29" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/grids.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="41" selection-start-column="41" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/contact.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+              <folding>
+                <element signature="n#style#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/contact.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
             </state>
           </provider>
         </entry>
@@ -107,13 +235,23 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ol</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/view/contact.php" />
+=======
+        <option value="$PROJECT_DIR$/view/footer.php" />
+        <option value="$PROJECT_DIR$/assets/js/main.js" />
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
         <option value="$PROJECT_DIR$/model/BookingLogic.php" />
         <option value="$PROJECT_DIR$/view/about.php" />
         <option value="$PROJECT_DIR$/view/bookings.php" />
@@ -129,14 +267,26 @@
         <option value="$PROJECT_DIR$/view/header.php" />
         <option value="$PROJECT_DIR$/assets/js/main.js" />
         <option value="$PROJECT_DIR$/assets/css/home.css" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/assets/css/essentials.css" />
         <option value="$PROJECT_DIR$/assets/css/header.css" />
+=======
+        <option value="$PROJECT_DIR$/assets/css/contact.css" />
+        <option value="$PROJECT_DIR$/view/contact.php" />
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="965" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-7" />
+    <option name="width" value="1927" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -144,7 +294,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -194,10 +343,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yourmvc" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
@@ -232,30 +383,61 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567773689454</updated>
+<<<<<<< HEAD
+      <workItem from="1567773690742" duration="4508000" />
+      <workItem from="1568192287079" duration="3321000" />
+      <workItem from="1568202841696" duration="69000" />
+      <workItem from="1568277345899" duration="1514000" />
+=======
       <workItem from="1567773690742" duration="4849000" />
+<<<<<<< HEAD
       <workItem from="1568189928461" duration="14318000" />
+=======
+      <workItem from="1568189928461" duration="4674000" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="19167000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="9412000" />
+=======
+    <option name="totallyTimeSpent" value="9523000" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="-7" y="0" width="1927" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25921968" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
+=======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+=======
       <window_info anchor="bottom" id="Database Changes" order="8" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -269,7 +451,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/assets/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/view/footer.php">
+=======
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
     <entry file="file://$PROJECT_DIR$/view/contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -281,6 +479,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/view/about.php">
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
@@ -307,6 +506,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/assets/css/essentials.css">
+=======
     <entry file="file://$PROJECT_DIR$/model/DataHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -314,11 +516,41 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/view/footer.php">
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/assets/css/reservations.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/DataHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+=======
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
     <entry file="file://$PROJECT_DIR$/assets/css/about.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
     </entry>
     <entry file="file://$PROJECT_DIR$/model/ReservationLogic.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -330,25 +562,66 @@
     <entry file="file://$PROJECT_DIR$/controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
+<<<<<<< HEAD
           <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+=======
+          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="210">
+=======
+        <state relative-caret-position="150">
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/assets/css/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+=======
     <entry file="file://$PROJECT_DIR$/model/CinemaLogic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/utilities.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="168">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+=======
         <state relative-caret-position="-447">
           <folding>
             <element signature="n#style#0;n#th#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
           </folding>
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
         </state>
       </provider>
     </entry>
@@ -425,9 +698,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/home.css">
+    <entry file="file://$PROJECT_DIR$/assets/css/contact.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="588">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/grids.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
+<<<<<<< HEAD
           <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
@@ -443,6 +725,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
+=======
+          <caret column="41" selection-start-column="41" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#div#1;n#!!top" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="29" />
+>>>>>>> f9eff5ba29d5e59c0a9b777da0c724a435a4e4be
+>>>>>>> 9ff70d7ceec1e96cd7507d58eae8c19e6758bde3
         </state>
       </provider>
     </entry>
