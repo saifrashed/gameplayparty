@@ -27,9 +27,13 @@ header.main-header .header-logo {
     width: 55%;
 }
 
+
 header.main-header .header-logo img {
     width: 100%;
+    height: auto;
+    transition: all 0.5s ease-in-out;
 }
+
 
 
 /**
@@ -214,15 +218,14 @@ span + span {
 
 /* TABLET STYLING */
 @media (max-width: 1024px) {
-
-    header.main-header .header-logo img {
-        position: relative;
-        width: 80%;
-    }
-
     .menu {
         width: 100%;
     }
+
+    header.main-header .header-logo {
+        width: 85%;
+    }
+}
 
 @media (max-width: 980px) {
 
@@ -233,6 +236,9 @@ span + span {
 }
 
 @media (max-width: 768px) {
+    header.main-header .header-logo {
+        width: 85%;
+    }
 }
 
 @media screen and (max-width: 767px) and (min-width: 425px) {

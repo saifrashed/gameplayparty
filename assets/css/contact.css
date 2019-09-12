@@ -2,29 +2,54 @@
     All the styling for the header
  */
 
-.text-center {
+.contact-service {
     text-align: center;
+}
 
-}
-.text-right {
-    text-align: right;
-}
-.text-left {
+.contact-info {
     text-align: left;
+    padding: 100px;
 }
-.padding-left {
- padding-left: 5em ;
+
+.contact-image img {
+    width: 100%;
+    padding: 100px;
 }
-.padding-right {
-    padding-right: 5em;
+
+
+/* TABLET STYLING */
+@media (max-width: 1024px) {
+
+    .contact-service, .contact-info {
+        text-align: left;
+    }
+
+    .contact-info, .contact-image img {
+        padding: 0px;
+    }
+
+
+
+    .home-hero {
+        height: 250px;
+    }
 }
-.padding-top {
-padding-top:  8em;
+
+@media (max-width: 980px) {
 
 }
-.padding-bottom {
-    padding-bottom:  80em;
+
+/* tablet portrait / phone landscape */
+@media (max-width: 900px) {
 }
-.padding-left2 {
-    padding-left: 35em;
+
+@media (max-width: 768px) {
+}
+
+@media screen and (max-width: 767px) and (min-width: 425px) {
+}
+
+/* MOBILE STYLING */
+@media (max-width: 425px) {
+
 }
