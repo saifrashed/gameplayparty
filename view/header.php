@@ -29,13 +29,24 @@ session_start();
 <body>
 
 
-<div class="header-logo">
-    <a href="/?op=home">
-        <img src="./assets/img/logo.svg">
-    </a>
+<header class="main-header">
+    <div class="header-logo">
+        <a href="/?op=home">
+            <img src="./assets/img/logo.svg">
+        </a>
+    </div>
+</header>
+
+
+<div class="box">
+    <div class="btn not-active">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>
 
-<header class="menu">
+<div class="menu">
     <nav class="menu-desktop">
         <ul>
             <li><a href="?op=home">Home</a></li>
@@ -44,7 +55,7 @@ session_start();
             <li><a href="?op=contact">Contact</a></li>
         </ul>
     </nav>
-</header>
+</div>
 
 <div class="container-fluid">
 

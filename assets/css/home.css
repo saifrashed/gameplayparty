@@ -3,21 +3,32 @@
  */
 
 
-.home-hero {
-    height: 300px;
-    position: relative;
+
+
+
+/* TABLET STYLING */
+@media (max-width: 1024px) {
+
+    .home-hero {
+        height: 250px;
+    }
 }
 
-.background-hero {
-    position: absolute;
-    top: 0;
-    right: -20px;
-    bottom: 0;
-    left: -20px;
-    background: #009431;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #009431, #76b852);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #009431, #76b852); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /*background-image: url("/assets/img/slider.jpg");*/
-    /*background-size: cover;*/
-    z-index: -1;
+@media (max-width: 980px) {
+
+}
+
+/* tablet portrait / phone landscape */
+@media (max-width: 900px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media screen and (max-width: 767px) and (min-width: 425px) {
+}
+
+/* MOBILE STYLING */
+@media (max-width: 425px) {
+
 }

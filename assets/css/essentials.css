@@ -1,3 +1,10 @@
 body {
-    color: grey
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding-top: 300px;
+}
+
+
+.container-fluid {
+    min-height: 150vh;
 }
