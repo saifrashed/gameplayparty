@@ -31,7 +31,7 @@ session_start();
 
 <header class="main-header">
     <div class="header-logo">
-        <a href="/?op=home">
+        <a href="./?op=home">
             <img src="./assets/img/logo.svg">
         </a>
     </div>
