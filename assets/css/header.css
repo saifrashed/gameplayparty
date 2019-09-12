@@ -3,25 +3,24 @@
  */
 
 
-header {
-
+.menu {
+    position: fixed;
+    top:0;
+    right:0;
+    bottom: 0;
+    width: 300px;
+    background: #34495e;
+    transform: translateX(300px);
 }
 
-
-header div.header-logo {
-    display: inline-block;
+.header-logo {
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
 }
 
-header .header-logo img {
+.header-logo img {
     position: relative;
-    left: -50px;
-    width: 70%;
-}
-
-nav.menu-desktop {
-    float:right;
-}
-
-nav.menu-desktop ul li {
-    display: inline-block;
+    width: 50%;
 }

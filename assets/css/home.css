@@ -4,6 +4,20 @@
 
 
 .home-hero {
-    background: aquamarine;
     height: 300px;
+    position: relative;
+}
+
+.background-hero {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    bottom: 0;
+    left: -20px;
+    background: #009431;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #009431, #76b852);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #009431, #76b852); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background-image: url("/assets/img/slider.jpg");*/
+    /*background-size: cover;*/
+    z-index: -1;
 }

@@ -1,7 +1,7 @@
 <div class="row start-xs">
 
     <div class="col-xs-12 home-hero">
-        <h1>Hero</h1>
+        <div class="background-hero"></div>
     </div>
 
 

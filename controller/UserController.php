@@ -1,11 +1,11 @@
 <?php
-require_once 'model/BookingLogic.php';
+require_once 'model/ReservationLogic.php';
 require_once 'model/utilities.php';
 
 
-class BookingController {
+class UserController {
     public function __construct() {
-        $this->ProductsLogic = new BookingLogic();
+        $this->ReservationLogic = new ReservationLogic();
         $this->Utilities = new Utilities();
     }
 
