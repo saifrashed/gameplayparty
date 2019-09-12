@@ -7,7 +7,7 @@
     </div>
 
 
-    <div class="col-xs-12 col-md-6 padding-left2  padding-top">
+    <div class="col-xs-12 col-md-6  padding-top text-right">
         <h1 class=""> Contact info</h1>
         <br>
     <ul class="">
@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class="col-xs-12 col-md-6 text-left padding-left padding-top">
+    <div class="col-xs-12 col-md-6 padding-top">
         <img src="assets/img/customer.png" height="33%" length="33%" alt="customer">
     </div>
 
