@@ -68,8 +68,18 @@ class UserController {
      * Admin views
      */
 
-    public function collectAdminLogin() {
-        include './view/login.php';
+    public function collectAdminLogin() { // Checks or displays login
+
+        if ($_POST['email'] && $_POST['password']) {
+            $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
+        }
+
+
+        if($status) {
+            include './view/beheerder.php';
+        } else {
+            include './view/login.php';
+        }
     }
 
     public function collectAdminRegister() {
