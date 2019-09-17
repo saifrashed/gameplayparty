@@ -85,7 +85,6 @@ class UserController {
     public function collectAdminRegister() {
 
         $html = '';
-
         $result = $this->UserLogic->getRoles();
 
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
