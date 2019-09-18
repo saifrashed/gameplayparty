@@ -9,6 +9,13 @@
 ?>
 
 
+<!--<div class="row center-xs copyright-text">-->
+<!--    <div class="col-xs-12 col-md-12">-->
+<!--        <small>&copy; Copyright 2019, GamePlayParty</small>-->
+<!--    </div>-->
+<!--</div>-->
+
+
 </div>
 
 <!-- Scripts -->

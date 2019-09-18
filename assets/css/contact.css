@@ -9,7 +9,13 @@
 .contact-info {
     text-align: left;
     padding: 100px;
+    color: #000;
 }
+
+.contact-info ul li {
+    color: #000;
+}
+
 
 .contact-image img {
     width: 100%;

@@ -1,4 +1,4 @@
-<div class="row center-xs">
+<div class="row center-xs middle-xs">
 
     <div class="col-xs-12 col-md-12 contact-service">
         <h1>Service</h1>
@@ -9,9 +9,9 @@
         <h1>Contact info</h1>
         <ul>
             <li>Utrecht</li>
-            <li>wahedlaan</li>
-            <li>3552CX</li>
-            <li>example@example.com</li>
+            <li>lorem ipsum</li>
+            <li>1111AA</li>
+            <li>hanneke@loremipsum.com</li>
             <li>061234566</li>
 
         </ul>
@@ -41,7 +41,7 @@
                 background: none !important;
                 height: 300px;
                 width: 1080px;
-                margin: 50px 0px;
+                margin: 0px 0px;
             }
         </style>
     </div>
