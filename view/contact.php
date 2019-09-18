@@ -1,12 +1,20 @@
+<div class="row center-xs middle-xs">
 
-
-<div class="row ">
-    <div class="col-xs-12 col-md-12 text-center ">
+    <div class="col-xs-12 col-md-12 contact-service">
         <h1>Service</h1>
         <p> Vragen? Neem contact met ons op. </p>
     </div>
 
+    <div class="col-xs-12 col-md-6 contact-info">
+        <h1>Contact info</h1>
+        <ul>
+            <li>Utrecht</li>
+            <li>lorem ipsum</li>
+            <li>1111AA</li>
+            <li>hanneke@loremipsum.com</li>
+            <li>061234566</li>
 
+<<<<<<< HEAD
     <div class="col-xs-12 col-md-6  padding-top text-right">
         <h1 class=""> Contact info</h1>
         <br>
@@ -22,20 +30,37 @@
 
     <div class="col-xs-12 col-md-6 padding-top">
         <img src="assets/img/customer.png" height="33%" length="33%" alt="customer">
+=======
+        </ul>
+>>>>>>> origin/development
     </div>
 
-    <div id="googleMap" style="width:100%;height:400px;"></div>
+    <div class="col-xs-12 col-md-6 contact-image">
+        <img src="./assets/img/customer.png" alt="customer">
 
-    <script>
-        function myMap() {
-            var mapProp= {
-                center:new google.maps.LatLng(51.508742,-0.120850),
-                zoom:5,
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        }
-    </script>
+    </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="1080" height="300" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <style>
+            .mapouter {
+                position: relative;
+                text-align: right;
+                height: 300px;
+                width: 1080px;
+            }
 
+            .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 300px;
+                width: 1080px;
+                margin: 0px 0px;
+            }
+        </style>
+    </div>
 </div>

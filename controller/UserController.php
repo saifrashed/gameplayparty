@@ -1,11 +1,13 @@
 <?php
 require_once 'model/ReservationLogic.php';
+require_once 'model/UserLogic.php';
 require_once 'model/utilities.php';
 
 
 class UserController {
     public function __construct() {
         $this->ReservationLogic = new ReservationLogic();
+        $this->UserLogic = new UserLogic();
         $this->Utilities = new Utilities();
     }
 
@@ -16,6 +18,12 @@ class UserController {
         try {
             $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : NULL;
             switch ($op) {
+                case 'login':
+                    $this->collectAdminLogin();
+                    break;
+                case 'register':
+                    $this->collectAdminRegister();
+                    break;
                 case 'contact':
                     $this->collectContact();
                     break;
@@ -53,6 +61,42 @@ class UserController {
 
     public function collectContact() {
         include './view/contact.php';
+    }
+
+
+    /**
+     * Admin views
+     */
+
+    public function collectAdminLogin() { // Checks or displays login
+
+        if ($_POST['email'] && $_POST['password']) {
+            $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
+        }
+
+
+        if($status) {
+            include './view/beheerder.php';
+        } else {
+            include './view/login.php';
+        }
+    }
+
+    public function collectAdminRegister() {
+
+        $html = '';
+        $result = $this->UserLogic->getRoles();
+
+        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $html .= '<option value="'. $row['rollen_id'] .'">'. $row['omschrijving'] .'</option>';
+        }
+
+
+        if($_POST['email'] && $_POST['password']) {
+            $this->UserLogic->createUser($_POST['voornaam'], $_POST['achternaam'], $_POST['password'], $_POST['email'], $_POST['rol']);
+        }
+
+        include './view/register.php';
     }
 }
 

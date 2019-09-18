@@ -3,15 +3,35 @@
  */
 
 
+.about-block {
+
+}
+
+.about-block .about-text {
+
+}
+
+.about-block .about-image img {
+    width: 100%;
+}
 
 
+.offers div {
+    margin-bottom: 75px;
+}
+
+.offers img {
+    width: 100%;
+    min-height: 400px;
+}
+
+.offers h3 {
+    padding: 10px 0px;
+}
 
 /* TABLET STYLING */
 @media (max-width: 1024px) {
 
-    .home-hero {
-        height: 250px;
-    }
 }
 
 @media (max-width: 980px) {

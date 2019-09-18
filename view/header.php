@@ -22,6 +22,8 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,900i&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="assets/css/grids.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
@@ -47,7 +49,7 @@ session_start();
 </div>
 
 <div class="menu">
-    <nav class="menu-desktop">
+    <nav class="menu-list">
         <ul>
             <li><a href="?op=home">Home</a></li>
             <li><a href="?op=reservations">Reserveren</a></li>
@@ -55,6 +57,17 @@ session_start();
             <li><a href="?op=contact">Contact</a></li>
         </ul>
     </nav>
+</div>
+
+
+<div class="row center-xs slider">
+    <div class="col-xs-12 col-md-12">
+        <div class="slider-caption">
+            <h1>GamePlayParty</h1>
+            <p>Voor uw beste game ervaringen.</p>
+            <a href="./?op=reservations">Reserveer nu</a>
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid">

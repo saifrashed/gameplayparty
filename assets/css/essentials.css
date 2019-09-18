@@ -1,10 +1,22 @@
 body {
     overflow-x: hidden;
     box-sizing: border-box;
-    padding-top: 300px;
+    font-family: 'Roboto', sans-serif;
 }
 
+.slider {
+    background-image: url('../img/slider.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 0;
+    right: 0;
+    height: 350px;
+    margin-bottom: 25px;
+}
 
-.container-fluid {
-    min-height: 150vh;
+.slider-caption {
+    position: relative;
+    top: 175px;
+    color: #fff;
 }
