@@ -63,7 +63,24 @@ session_start();
 <div class="row center-xs slider">
     <div class="col-xs-12 col-md-12">
         <div class="slider-caption">
-            <h1>GamePlayParty</h1>
+            <?php
+            switch ($_REQUEST['op']) {
+                case 'home':
+                    echo '<h1>GamePlayParty</h1>';
+                    break;
+                case 'reservations':
+                    echo '<h1>Reserveren</h1>';
+                    break;
+                case 'about':
+                    echo '<h1>Over ons</h1>';
+                    break;
+                case 'contact':
+                    echo '<h1>Contact</h1>';
+                    break;
+                default:
+                    echo '<h1>GamePlayParty</h1>';
+            }
+            ?>
             <p>Voor uw beste game ervaringen.</p>
             <a href="./?op=reservations">Reserveer nu</a>
         </div>

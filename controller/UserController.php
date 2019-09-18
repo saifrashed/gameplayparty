@@ -75,6 +75,10 @@ class UserController {
         }
 
 
+        switch($status) {
+
+        }
+
         if($status) {
             include './view/beheerder.php';
         } else {
