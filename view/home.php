@@ -1,5 +1,3 @@
-
-
 <div class="row center-xs start-md middle-xs about-block">
     <div class="col-xs-12 col-md-6 about-text">
         <h1>GamePlayParty</h1>
@@ -24,18 +22,15 @@
         <h1>Onze aanbod</h1>
     </div>
 
-    <div class="col-xs-12 col-md-4">
-        <img src="./assets/img/kinepolis.png">
-        <h3>Kinepolis Jaarbeurs utrecht</h3>
-    </div>
+    <?php
 
-    <div class="col-xs-12 col-md-4">
-        <img src="./assets/img/kinepolis_2.png">
-        <h3>Kinepolis Almere</h3>
-    </div>
+    // Bioscopen worden weergeven uit de database.
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        echo '<div class="col-xs-12 col-md-4">';
+        echo '<img src="./assets/img/bioscopen/'.$row['bioscoop_id'].'.png">';
+        echo '<h3>'.$row['naam'].'</h3>';
+        echo '</div>';
+    }
 
-    <div class="col-xs-12 col-md-4">
-        <img src="./assets/img/kinepolis_3.png">
-        <h3>Kinepolis Den helder</h3>
-    </div>
+    ?>
 </div>

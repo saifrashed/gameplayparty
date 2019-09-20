@@ -11,6 +11,17 @@ class CinemaLogic {
 
     }
 
+    public function getCinemas() {
+        $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen');
+        return $sql;
+    }
+
+    public function getCinema($bioscoopName) {
+        $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen WHERE naam="'.$bioscoopName.'"');
+        return $sql;
+    }
+
+
 }
 
 ?>

@@ -1,5 +1,6 @@
 <?php
 require_once 'model/ReservationLogic.php';
+require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
 require_once 'model/utilities.php';
 
@@ -7,6 +8,7 @@ require_once 'model/utilities.php';
 class UserController {
     public function __construct() {
         $this->ReservationLogic = new ReservationLogic();
+        $this->CinemaLogic = new CinemaLogic();
         $this->UserLogic = new UserLogic();
         $this->Utilities = new Utilities();
     }
@@ -48,11 +50,20 @@ class UserController {
     }
 
     public function collectHome() {
+
+        $result = $this->CinemaLogic->getCinemas();
+
         include './view/home.php';
     }
 
     public function collectReservations() {
-        include './view/reservations.php';
+        if(!$_GET['bioscoop']) {
+            $result = $this->CinemaLogic->getCinemas();
+            include './view/reservations.php';
+        } else {
+            $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop'])->fetch(PDO::FETCH_ASSOC);
+            include './view/single-reservations.php';
+        }
     }
 
     public function collectAbout() {
