@@ -24,7 +24,7 @@ session_start();
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,900i&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/grids.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/grids/grids.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 
@@ -53,7 +53,6 @@ session_start();
         <ul>
             <li><a href="?op=home">Home</a></li>
             <li><a href="?op=reservations">Reserveren</a></li>
-            <li><a href="?op=about">Over ons</a></li>
             <li><a href="?op=contact">Contact</a></li>
         </ul>
     </nav>
@@ -71,9 +70,6 @@ session_start();
                 case 'reservations':
                     echo '<h1>Reserveren</h1>';
                     break;
-                case 'about':
-                    echo '<h1>Over ons</h1>';
-                    break;
                 case 'contact':
                     echo '<h1>Contact</h1>';
                     break;
@@ -82,7 +78,7 @@ session_start();
             }
             ?>
             <p>Voor uw beste game ervaringen.</p>
-            <a href="./?op=reservations">Reserveer nu</a>
+            <a href="./?op=reservations" class="btn-link light">Reserveer nu</a>
         </div>
     </div>
 </div>

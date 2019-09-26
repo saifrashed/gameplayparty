@@ -29,9 +29,6 @@ class UserController {
                 case 'contact':
                     $this->collectContact();
                     break;
-                case 'about':
-                    $this->collectAbout();
-                    break;
                 case 'reservations':
                     $this->collectReservations();
                     break;
@@ -51,23 +48,20 @@ class UserController {
 
     public function collectHome() {
 
-        $result = $this->CinemaLogic->getCinemas();
+        $bioscopen = $this->CinemaLogic->getCinemas();
 
         include './view/home.php';
     }
 
     public function collectReservations() {
         if(!$_GET['bioscoop']) {
-            $result = $this->CinemaLogic->getCinemas();
+            $bioscopen = $this->CinemaLogic->getCinemas();
             include './view/reservations.php';
         } else {
-            $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop'])->fetch(PDO::FETCH_ASSOC);
+            $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
+            $zalen = $this->CinemaLogic->getHalls($bioscoop['bioscoop_id']);
             include './view/single-reservations.php';
         }
-    }
-
-    public function collectAbout() {
-        include './view/about.php';
     }
 
     public function collectContact() {
@@ -91,9 +85,9 @@ class UserController {
         }
 
         if($status) {
-            include './view/beheerder.php';
+            include './view/beheerderPaginas/beheerder.php';
         } else {
-            include './view/login.php';
+            include './view/beheerderPaginas/login.php';
         }
     }
 
@@ -106,12 +100,11 @@ class UserController {
             $html .= '<option value="'. $row['rollen_id'] .'">'. $row['omschrijving'] .'</option>';
         }
 
-
         if($_POST['email'] && $_POST['password']) {
             $this->UserLogic->createUser($_POST['voornaam'], $_POST['achternaam'], $_POST['password'], $_POST['email'], $_POST['rol']);
         }
 
-        include './view/register.php';
+        include './view/beheerderPaginas/register.php';
     }
 }
 

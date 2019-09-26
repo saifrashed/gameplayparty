@@ -1,11 +1,25 @@
+<?php include 'header.php' ?>;
 
-<div class="row center-xs middle-xs offers" style="margin-top: 200px; margin-bottom: 300px;">
+<div class="row center-xs middle-xs offers">
 
-    <div class="col-xs-12 col-md-12">
-        <h1>Onze aanbod</h1>
+    <div class="row center-xs  offers">
+
+        <div class="col-xs-12 col-md-6">
+            <img src="./assets/img/bioscopen/<?php echo $bioscoop["bioscoop_id"]; ?>.png">
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+            <h1><?php echo $bioscoop["naam"]; ?></h1>
+            <?php echo $bioscoop["info"]; ?>
+            <?php echo $bioscoop["adres"]; ?>
+            <?php echo $bioscoop["postcode"]; ?>
+        </div>
+
+
+        <div class="row center-xs middle-xs offers">
+            <?php echo $zalen ?>
+        </div>
     </div>
-
-    <?php
-    echo var_dump($bioscoop);
-    ?>
 </div>
+
+<?php include 'footer.php' ?>;

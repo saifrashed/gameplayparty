@@ -16,7 +16,6 @@
                 </select>
 
                 <button type="submit">Register</button>
-                <p class="form-message">Already registered? </p>
             </form>
         </div>
     </div>

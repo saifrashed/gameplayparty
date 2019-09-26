@@ -1,3 +1,5 @@
+<?php include 'header.php' ?>;
+
 <div class="row center-xs middle-xs">
 
     <div class="col-xs-12 col-md-12 contact-service">
@@ -14,29 +16,12 @@
             <li>hanneke@loremipsum.com</li>
             <li>061234566</li>
 
-<<<<<<< HEAD
-    <div class="col-xs-12 col-md-6  padding-top text-right">
-        <h1 class=""> Contact info</h1>
-        <br>
-    <ul class="">
-        <ol> Utrecht</ol>
-        <ol> wahedlaan 1</ol>
-        <ol> 3552CX </ol>
-        <ol> -example@example.com</ol>
-        <ol> 061234566</ol>
         </ul>
-
-    </div>
-
-    <div class="col-xs-12 col-md-6 padding-top">
-        <img src="assets/img/customer.png" height="33%" length="33%" alt="customer">
-=======
-        </ul>
->>>>>>> origin/development
     </div>
 
     <div class="col-xs-12 col-md-6 contact-image">
-        <img src="./assets/img/customer.png" alt="customer">
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=utrecht&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.utilitysavingexpert.com">Utility Saving Expert</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
     </div>
-
 </div>
+
+<?php include 'footer.php' ?>;

@@ -1,3 +1,6 @@
+
+<?php include 'header.php' ?>;
+
 <div class="row center-xs start-md middle-xs about-block">
     <div class="col-xs-12 col-md-6 about-text">
         <h1>GamePlayParty</h1>
@@ -7,7 +10,7 @@
             Vestibulum bibendum imperdiet orci vel imperdiet. Suspendisse potenti. Cras nunc risus, tempus sed quam vel,
             consectetur iaculis ex.
         </p>
-        <a href="./?op=reservations">Naar aanbod <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="./?op=reservations" class="btn-link dark">Naar aanbod <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
     <div class="col-xs-12 col-md-6 about-image">
@@ -16,21 +19,14 @@
 </div>
 
 
-<div class="row center-xs middle-xs offers" style="margin-top: 200px; margin-bottom: 300px;">
+<div class="row start-xs middle-xs offers">
 
     <div class="col-xs-12 col-md-12">
-        <h1>Onze aanbod</h1>
+        <h1>Bioscopen</h1>
     </div>
 
-    <?php
-
-    // Bioscopen worden weergeven uit de database.
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        echo '<div class="col-xs-12 col-md-4">';
-        echo '<img src="./assets/img/bioscopen/'.$row['bioscoop_id'].'.png">';
-        echo '<h3>'.$row['naam'].'</h3>';
-        echo '</div>';
-    }
-
-    ?>
+    <?php  echo $bioscopen ?>
 </div>
+
+
+<?php include 'footer.php' ?>;
