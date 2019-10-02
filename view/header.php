@@ -73,7 +73,7 @@
                     echo '<h1>GamePlayParty</h1>';
             }
             ?>
-            <p>Voor uw beste game ervaringen.</p>
+            <p>Voor uw beste bioscoop gameplay party's.</p>
             <a href="./?op=reservations" class="btn-link light">Reserveer nu</a>
         </div>
     </div>
