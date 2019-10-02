@@ -37,14 +37,6 @@
 </div>
 
 <div class="menu">
-
-    <?php if ($_SESSION['id']) { ?>
-        <a class="login-btn" href="./?op=login">
-            <i class="fas fa-cogs"></i>
-        </a>
-    <?php } ?>
-
-
     <nav class="menu-list">
         <ul>
             <li><a href="?op=home">Home</a></li>
