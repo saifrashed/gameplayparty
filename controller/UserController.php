@@ -79,7 +79,8 @@ class UserController {
      */
 
     public function collectAdminLogout() { // logs user off
-        $this->UserLogic->logoutUser();
+        session_start();
+        session_destroy();
 
         $homeContent = $this->ContentLogic->getHomeContent();
         $bioscopen = $this->CinemaLogic->getCinemas();
@@ -87,13 +88,14 @@ class UserController {
     }
 
     public function collectAdminLogin() { // Checks or displays login
+        session_start();
 
         if (!$_POST['email'] && !$_POST['password']) {
             include './view/beheerderPaginas/login.php';
         } else {
             $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
 
-            if($status == false) {
+            if(!$status) {
                 include './view/beheerderPaginas/login.php';
             } else {
                 if($_SESSION) {
@@ -102,6 +104,8 @@ class UserController {
                             include './view/beheerderPaginas/beheerder.php';
                             break;
                         case 'Bioscoop medewerker':
+                            $bioscoopData = $this->UserLogic->getAdminBioscoop($_SESSION['id']);
+
                             include './view/beheerderPaginas/bioscoop.php';
                             break;
                         case 'Redacteur':

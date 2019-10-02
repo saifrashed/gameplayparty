@@ -1,6 +1,6 @@
 
 
-var btn = $('.btn');
+var btn = $('.btn-menu');
 var menu = $('.menu');
 
 btn.on('click', function() {

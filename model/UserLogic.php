@@ -14,28 +14,15 @@ class UserLogic {
     public function createUser($firstName, $lastName, $password, $email, $rol) {
 
         $result = $this->DataHandler->readsData('SELECT * FROM gebruikers WHERE email="' . $email . '"');
-        $status = false;
 
-        if (empty($firstName) && empty($lastName) && empty($password) && empty($email) && empty($gender) && empty($city) && empty($street) && empty($postal)) {
-            return $status;
-        }
-
-        if ($result->rowCount() !== 0) {
-            return $status;
-        }
-
-        if (strlen($password) < 5 || strlen($password) > 50) {
-            return $status;
-        }
+        if (empty($firstName) && empty($lastName) && empty($password) && empty($email) && empty($gender) && empty($city) && empty($street) && empty($postal)) return false;
+        if ($result->rowCount() !== 0) return false;
+        if (strlen($password) < 5 || strlen($password) > 50) return false;
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $this->DataHandler->createData('INSERT INTO gebruikers(voornaam, achternaam, email, password, rollen_id) VALUES("' . $firstName . '","' . $lastName . '","' . $email . '","' . $passwordHash . '","'.$rol.'")');
 
-        $this->DataHandler->createData('INSERT INTO gebruikers(voornaam, achternaam, email, password, rollen_id) 
-                                VALUES("' . $firstName . '","' . $lastName . '","' . $email . '","' . $passwordHash . '","'.$rol.'")');
-
-        $status = true;
-
-        return $status;
+        return true;
     }
 
 
@@ -45,24 +32,20 @@ class UserLogic {
         $row = $result->fetch(PDO::FETCH_ASSOC);
 
         $passwordStatus = password_verify($password, $row['password']);
-        $loginStatus = false;
 
         if ($passwordStatus) {
+
+            session_start();
+
             $_SESSION['id'] = $row['gebruiker_id'];
             $_SESSION['voornaam'] = $row['voornaam'];
             $_SESSION['achternaam'] = $row['achternaam'];
             $_SESSION['rol'] = $row['rollen_id'];
 
-            $loginStatus = true;
-
-            return $loginStatus;
+            return true;
         } else {
-            return $loginStatus;
+            return false;
         }
-    }
-
-    public function logoutUser() {
-        $_SESSION = [];
     }
 
     public function getRoles() {
@@ -75,6 +58,11 @@ class UserLogic {
         return $result['omschrijving'];
     }
 
+    public function getAdminBioscoop($userId) {
+        $result = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN gebruikers WHERE gebruiker_id='.$userId.';')->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
 
 }
 

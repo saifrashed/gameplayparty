@@ -29,7 +29,7 @@
 
 
 <div class="box">
-    <div class="btn not-active">
+    <div class="btn-menu not-active">
         <span></span>
         <span></span>
         <span></span>
@@ -37,9 +37,13 @@
 </div>
 
 <div class="menu">
-    <a class="login-btn" href="./?op=login">
-        <i class="fas fa-cogs"></i>
-    </a>
+
+    <?php if ($_SESSION['id']) { ?>
+        <a class="login-btn" href="./?op=login">
+            <i class="fas fa-cogs"></i>
+        </a>
+    <?php } ?>
+
 
     <nav class="menu-list">
         <ul>
