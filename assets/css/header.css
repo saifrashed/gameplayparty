@@ -30,7 +30,7 @@ header.main-header .header-logo {
 
 
 header.main-header .header-logo img {
-    width: 100%;
+    width: 75%;
     height: auto;
     transition: all 0.5s ease-in-out;
 }
@@ -94,7 +94,16 @@ Menu sidebar
 }
 
 
+/**
+Login button
+ */
 
+a.login-btn {
+    font-size: 39px;
+    padding: 15px;
+    color: #fff;
+    cursor: pointer;
+}
 
 /**
 Hamburger

@@ -16,7 +16,7 @@ class CinemaLogic
 
     public function getCinemas()
     {
-        $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen');
+        $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN provincies');
         $html = '';
         // Bioscopen worden weergeven uit de database.
         while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
@@ -26,6 +26,9 @@ class CinemaLogic
             $html .= '<img src="./assets/img/bioscopen/' . $row['bioscoop_id'] . '.png">';
             $html .= '<h3>' . $row['naam'] . '</h3>';
             $html .= '</a>';
+            $html .= '<ul>';
+            $html .= '<li>' . $row['adres'] . ', ' . $row['omschrijving'] . '</li>';
+            $html .= '</ul>';
             $html .= '</div>';
             $html .= '</div>';
         }
@@ -42,7 +45,7 @@ class CinemaLogic
 
     public function getHalls($bioscoopId)
     {
-        $result = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN zalen');
+        $result = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN zalen WHERE bioscoop_id= ' . $bioscoopId . '');
         $html = '';
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {

@@ -1,15 +1,3 @@
-<?php
-/**
- * Header
- * User: saifeddine
- * Date: 2019-02-18
- * Time: 15:32
- */
-
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,6 +37,10 @@ session_start();
 </div>
 
 <div class="menu">
+    <a class="login-btn" href="./?op=login">
+        <i class="fas fa-cogs"></i>
+    </a>
+
     <nav class="menu-list">
         <ul>
             <li><a href="?op=home">Home</a></li>

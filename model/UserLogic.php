@@ -61,6 +61,10 @@ class UserLogic {
         }
     }
 
+    public function logoutUser() {
+        $_SESSION = [];
+    }
+
     public function getRoles() {
         $query = $this->DataHandler->readsData('SELECT * FROM rollen;');
         return $query;

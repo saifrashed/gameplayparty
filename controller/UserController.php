@@ -2,6 +2,7 @@
 require_once 'model/ReservationLogic.php';
 require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
+require_once 'model/ContentLogic.php';
 require_once 'model/utilities.php';
 
 
@@ -10,6 +11,7 @@ class UserController {
         $this->ReservationLogic = new ReservationLogic();
         $this->CinemaLogic = new CinemaLogic();
         $this->UserLogic = new UserLogic();
+        $this->ContentLogic = new ContentLogic();
         $this->Utilities = new Utilities();
     }
 
@@ -20,6 +22,9 @@ class UserController {
         try {
             $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : NULL;
             switch ($op) {
+                case 'logout':
+                    $this->collectAdminLogout();
+                    break;
                 case 'login':
                     $this->collectAdminLogin();
                     break;
@@ -47,9 +52,8 @@ class UserController {
     }
 
     public function collectHome() {
-
+        $homeContent = $this->ContentLogic->getHomeContent();
         $bioscopen = $this->CinemaLogic->getCinemas();
-
         include './view/home.php';
     }
 
@@ -66,6 +70,7 @@ class UserController {
 
     public function collectContact() {
         include './view/contact.php';
+
     }
 
 
@@ -73,21 +78,41 @@ class UserController {
      * Admin views
      */
 
+    public function collectAdminLogout() { // logs user off
+        $this->UserLogic->logoutUser();
+
+        $homeContent = $this->ContentLogic->getHomeContent();
+        $bioscopen = $this->CinemaLogic->getCinemas();
+        include './view/home.php';
+    }
+
     public function collectAdminLogin() { // Checks or displays login
 
-        if ($_POST['email'] && $_POST['password']) {
-            $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
-        }
-
-
-        switch($status) {
-
-        }
-
-        if($status) {
-            include './view/beheerderPaginas/beheerder.php';
-        } else {
+        if (!$_POST['email'] && !$_POST['password']) {
             include './view/beheerderPaginas/login.php';
+        } else {
+            $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
+
+            if($status == false) {
+                include './view/beheerderPaginas/login.php';
+            } else {
+                if($_SESSION) {
+                    switch ($this->UserLogic->getRole($_SESSION['id'])) {
+                        case 'Beheerder':
+                            include './view/beheerderPaginas/beheerder.php';
+                            break;
+                        case 'Bioscoop medewerker':
+                            include './view/beheerderPaginas/bioscoop.php';
+                            break;
+                        case 'Redacteur':
+                            include './view/beheerderPaginas/redacteur.php';
+                            break;
+                        default:
+                            echo 'U bent niet ingelogd';
+                            break;
+                    }
+                }
+            }
         }
     }
 
