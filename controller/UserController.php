@@ -2,7 +2,7 @@
 require_once 'model/ReservationLogic.php';
 require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
-require_once 'model/ContentLogic.php';
+require_once 'model/AuthorLogic.php';
 require_once 'model/utilities.php';
 
 
@@ -11,7 +11,7 @@ class UserController {
         $this->ReservationLogic = new ReservationLogic();
         $this->CinemaLogic = new CinemaLogic();
         $this->UserLogic = new UserLogic();
-        $this->ContentLogic = new ContentLogic();
+        $this->ContentLogic = new AuthorLogic();
         $this->Utilities = new Utilities();
     }
 
@@ -104,8 +104,6 @@ class UserController {
                             include './view/beheerderPaginas/beheerder.php';
                             break;
                         case 'Bioscoop medewerker':
-                            $bioscoopData = $this->UserLogic->getAdminBioscoop($_SESSION['id']);
-
                             include './view/beheerderPaginas/bioscoop.php';
                             break;
                         case 'Redacteur':

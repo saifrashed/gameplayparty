@@ -7,6 +7,12 @@
         <a class="btn btn-danger" href="./?op=logout">Uitloggen</a>
         <a class="btn btn-primary" href="./?op=register">Voeg gebruiker toe</a>
 
+        <?php
+
+        echo var_dump($_SESSION);
+
+        ?>
+
     </div>
 </div>
 

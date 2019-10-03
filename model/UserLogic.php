@@ -40,7 +40,11 @@ class UserLogic {
             $_SESSION['id'] = $row['gebruiker_id'];
             $_SESSION['voornaam'] = $row['voornaam'];
             $_SESSION['achternaam'] = $row['achternaam'];
-            $_SESSION['rol'] = $row['rollen_id'];
+            $_SESSION['rol'] = $this->getRole($row['gebruiker_id']);
+
+            if($this->getBioscoop($row['gebruiker_id'])) {
+                $_SESSION['bioscoop_naam'] = $this->getBioscoop($row['gebruiker_id']);
+            }
 
             return true;
         } else {
@@ -58,10 +62,9 @@ class UserLogic {
         return $result['omschrijving'];
     }
 
-    public function getAdminBioscoop($userId) {
-        $result = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN gebruikers WHERE gebruiker_id='.$userId.';')->fetch(PDO::FETCH_ASSOC);
-
-        return $result;
+    public function getBioscoop($userId) {
+        $result = $this->DataHandler->readsData('SELECT bioscopen.naam FROM bioscopen NATURAL JOIN gebruikers WHERE gebruiker_id='.$userId.';')->fetch(PDO::FETCH_ASSOC);
+        return $result['naam'];
     }
 
 }
