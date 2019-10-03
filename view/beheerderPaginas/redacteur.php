@@ -7,6 +7,8 @@
     </div>
 
     <div class="col-xs-12 col-md-12">
+        <?php echo var_dump($pagestable) ?>
+        <?php echo var_dump($result) ?>
     </div>
 
 </div>

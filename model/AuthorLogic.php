@@ -11,6 +11,11 @@ class AuthorLogic {
 
     }
 
+
+    public function getPages() {
+        return $this->DataHandler->readsData('SELECT * FROM paginas');
+    }
+
     public function getHomeContent() {
         return $this->DataHandler->readsData('SELECT inhoud FROM paginas WHERE naam="home"')->fetch(PDO::FETCH_ASSOC)['inhoud'];
     }
