@@ -10,11 +10,11 @@
     <div class="col-xs-12 col-md-6 contact-info">
         <h1>Contact info</h1>
         <ul>
-            <li>Utrecht</li>
-            <li>lorem ipsum</li>
-            <li>1111AA</li>
-            <li>hanneke@loremipsum.com</li>
-            <li>061234566</li>
+            <li>zeeland</li>
+            <li>maasdriel 69217</li>
+            <li>1861 jan pieterszoon coenstraat</li>
+            <li>jack.jones@gameplayparty.nl</li>
+            <li>(656)-976-4980</li>
 
         </ul>
     </div>

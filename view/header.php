@@ -38,11 +38,6 @@
 
 <div class="menu">
 
-    <?php if ($_SESSION['id']) { ?>
-        <a class="login-btn" href="./?op=login">
-            <i class="fas fa-cogs"></i>
-        </a>
-    <?php } ?>
 
 
     <nav class="menu-list">
@@ -73,7 +68,7 @@
                     echo '<h1>GamePlayParty</h1>';
             }
             ?>
-            <p>Voor uw beste bioscoop gameplay party's.</p>
+            <p>Power to the players.</p>
             <a href="./?op=reservations" class="btn-link light">Reserveer nu</a>
         </div>
     </div>

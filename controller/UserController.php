@@ -126,7 +126,7 @@ class UserController {
         $result = $this->UserLogic->getRoles();
 
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $html .= '<option value="'. $row['rollen_id'] .'">'. $row['omschrijving'] .'</option>';
+            $html .= '<option value="'. $row['rollen_id'] .'>'. $row['omschrijving'] .'</option>';
         }
 
         if($_POST['email'] && $_POST['password']) {

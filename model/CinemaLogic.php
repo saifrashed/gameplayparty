@@ -6,7 +6,7 @@ class CinemaLogic
 
     public function __construct()
     {
-        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
+        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
     }
 
     public function __destruct()
@@ -60,7 +60,7 @@ class CinemaLogic
             $html .= '<li>schermgrootte: ' . $row['schermgrootte'] . '</li>';
             $html .= '<li>faciliteiten: ' . $row['faciliteiten'] . '</li>';
             $html .= '</ul>';
-            $html .= '<a href="#" class="btn-link dark">Reserveer nu <i class="fas fa-arrow-circle-right"></i></a>';
+            $html .= '<a href="#" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
             $html .= '</div>';
             $html .= '</div>';
         }
