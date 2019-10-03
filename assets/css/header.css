@@ -129,7 +129,7 @@ Hamburger
     cursor: pointer;
 }
 
-span {
+.btn-menu span {
     display: block;
     width: 100%;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
@@ -140,7 +140,7 @@ span {
     position: relative;
 }
 
-span + span {
+.btn-menu span + span {
     margin-top: 14px;
 }
 

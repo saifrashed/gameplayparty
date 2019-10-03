@@ -3,7 +3,7 @@
 <div class="row center-xs start-md middle-xs about-block">
     <div class="col-xs-12 col-md-6 about-text">
         <?php echo $homeContent ?>
-        <a href="./?op=reservations" class="btn-link dark">Naar aanbod <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="./?op=reservations" class="btn-link dark">Naar bioscopen <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
     <div class="col-xs-12 col-md-6 about-image">
