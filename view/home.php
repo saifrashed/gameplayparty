@@ -1,12 +1,12 @@
 <?php include 'header.php' ?>
 
 <div class="row center-xs start-md middle-xs about-block">
-    <div class="about-text">
-        <div class="align-left"> <?php echo $homeContent ?> </div>
+    <div class="col-xs-12 col-md-6 about-text">
+        <?php echo $homeContent ?>
         <a href="./?op=reservations" class="btn-link dark">Naar bioscopen <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
-    <div class="about-image">
+    <div class="col-xs-12 col-md-6 about-image">
         <img src="./assets/img/lanparty.jpg">
     </div>
 </div>
