@@ -11,6 +11,7 @@ class UserController {
         $this->ReservationLogic = new ReservationLogic();
         $this->CinemaLogic = new CinemaLogic();
         $this->UserLogic = new UserLogic();
+        $this->AuthorLogic = new AuthorLogic();
         $this->ContentLogic = new AuthorLogic();
         $this->Utilities = new Utilities();
     }
@@ -107,6 +108,9 @@ class UserController {
                             include './view/beheerderPaginas/bioscoop.php';
                             break;
                         case 'Redacteur':
+                            $resultPages = $this->AuthorLogic->getPages();
+                            $pagesTable = $this->Utilities->createTable($result);
+
                             include './view/beheerderPaginas/redacteur.php';
                             break;
                         default:
