@@ -4,12 +4,8 @@ require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
 require_once 'model/AuthorLogic.php';
 require_once 'model/utilities.php';
-<<<<<<< HEAD
-require_once 'model/AdminLogic.php';
-=======
 
 session_start();
->>>>>>> e066329af1e9e85f81dd83c9366faefe13b27117
 
 
 /**
@@ -21,18 +17,10 @@ class UserController {
 
     public function __construct() {
         $this->ReservationLogic = new ReservationLogic();
-<<<<<<< HEAD
-        $this->CinemaLogic = new CinemaLogic();
-        $this->UserLogic = new UserLogic();
-        $this->AuthorLogic = new AuthorLogic();
-        $this->AdminLogic = new AdminLogic();
-        $this->Utilities = new Utilities();
-=======
         $this->CinemaLogic      = new CinemaLogic();
         $this->UserLogic        = new UserLogic();
         $this->AuthorLogic      = new AuthorLogic();
         $this->Utilities        = new Utilities();
->>>>>>> e066329af1e9e85f81dd83c9366faefe13b27117
     }
 
     public function __destruct() {
@@ -81,11 +69,7 @@ class UserController {
     }
 
     public function collectHome() {
-<<<<<<< HEAD
-        $homeContent = $this->AuthorLogic->getHomeContent();
-=======
         $content   = $this->AuthorLogic->getContent('home');
->>>>>>> e066329af1e9e85f81dd83c9366faefe13b27117
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
@@ -118,17 +102,11 @@ class UserController {
     public function collectAdminLogout() { // logs user off
         session_destroy();
 
-<<<<<<< HEAD
-        $homeContent = $this->AuthorLogic->getHomeContent();
-=======
         $content   = $this->AuthorLogic->getContent('home');
->>>>>>> e066329af1e9e85f81dd83c9366faefe13b27117
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
 
-<<<<<<< HEAD
-=======
     public function collectAdminRegister() {
 
         $html   = '';
@@ -144,7 +122,6 @@ class UserController {
 
         include './view/beheerderPaginas/register.php';
     }
->>>>>>> e066329af1e9e85f81dd83c9366faefe13b27117
 
     public function collectAdminLogin() { // Checks or displays login
 
@@ -159,12 +136,7 @@ class UserController {
                 if ($_SESSION) {
                     switch ($this->UserLogic->getRole($_SESSION['id'])) {
                         case 'Beheerder':
-<<<<<<< HEAD
-                            $reserveringen = $this->AdminLogic->getReserveringen();
-                            include './view/beheerderPaginas/beheerder.php';
-=======
                             header('Location: ./?op=admin');
->>>>>>> e066329af1e9e85f81dd83c9366faefe13b27117
                             break;
                         case 'Bioscoop medewerker':
                             header('Location: ./?op=employee');
