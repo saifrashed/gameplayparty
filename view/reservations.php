@@ -4,6 +4,7 @@
 
     <div class="col-xs-12 col-md-12">
         <h1>Ons aanbod</h1>
+        <?php echo $content ?>
     </div>
 
     <?php echo $bioscopen ?>
