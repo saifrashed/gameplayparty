@@ -4,14 +4,15 @@ require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
 require_once 'model/AuthorLogic.php';
 require_once 'model/utilities.php';
-
+require_once 'model/AdminLogic.php';
 
 class UserController {
     public function __construct() {
         $this->ReservationLogic = new ReservationLogic();
         $this->CinemaLogic = new CinemaLogic();
         $this->UserLogic = new UserLogic();
-        $this->ContentLogic = new AuthorLogic();
+        $this->AuthorLogic = new AuthorLogic();
+        $this->AdminLogic = new AdminLogic();
         $this->Utilities = new Utilities();
     }
 
@@ -52,7 +53,7 @@ class UserController {
     }
 
     public function collectHome() {
-        $homeContent = $this->ContentLogic->getHomeContent();
+        $homeContent = $this->AuthorLogic->getHomeContent();
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
@@ -82,10 +83,11 @@ class UserController {
         session_start();
         session_destroy();
 
-        $homeContent = $this->ContentLogic->getHomeContent();
+        $homeContent = $this->AuthorLogic->getHomeContent();
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
+
 
     public function collectAdminLogin() { // Checks or displays login
         session_start();
@@ -101,6 +103,7 @@ class UserController {
                 if($_SESSION) {
                     switch ($this->UserLogic->getRole($_SESSION['id'])) {
                         case 'Beheerder':
+                            $reserveringen = $this->AdminLogic->getReserveringen();
                             include './view/beheerderPaginas/beheerder.php';
                             break;
                         case 'Bioscoop medewerker':
