@@ -66,6 +66,15 @@
                 case 'contact':
                     echo '<h1>Contact</h1>';
                     break;
+                case 'admin':
+                    echo '<h1>Beheerder</h1>';
+                    break;
+                case 'employee':
+                    echo '<h1>Bioscoop Beheer</h1>';
+                    break;
+                case 'author':
+                    echo '<h1>Redacteur</h1>';
+                    break;
                 default:
                     echo '<h1>GamePlayParty</h1>';
             }

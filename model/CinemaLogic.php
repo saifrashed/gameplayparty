@@ -1,22 +1,18 @@
 <?php
 require_once 'model/DataHandler.php';
 
-class CinemaLogic
-{
+class CinemaLogic {
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
 
     }
 
-    public function getCinemas()
-    {
-        $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN provincies');
+    public function getCinemas() {
+        $sql  = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN provincies');
         $html = '';
         // Bioscopen worden weergeven uit de database.
         while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
@@ -36,17 +32,15 @@ class CinemaLogic
         return $html;
     }
 
-    public function getCinema($bioscoopName)
-    {
+    public function getCinema($bioscoopName) {
         $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen WHERE naam="' . $bioscoopName . '"')->fetch(PDO::FETCH_ASSOC);
         return $sql;
     }
 
 
-    public function getHalls($bioscoopId)
-    {
+    public function getHalls($bioscoopId) {
         $result = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN zalen WHERE bioscoop_id= ' . $bioscoopId . '');
-        $html = '';
+        $html   = '';
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $html .= '<div class="col-xs-12 col-md-4">';
