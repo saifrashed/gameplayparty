@@ -3,6 +3,7 @@ require_once 'model/ReservationLogic.php';
 require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
 require_once 'model/AuthorLogic.php';
+require_once 'model/AdminLogic.php';
 require_once 'model/utilities.php';
 
 session_start();
@@ -20,6 +21,7 @@ class UserController {
         $this->CinemaLogic      = new CinemaLogic();
         $this->UserLogic        = new UserLogic();
         $this->AuthorLogic      = new AuthorLogic();
+        $this->AdminLogic      = new AdminLogic();
         $this->Utilities        = new Utilities();
     }
 
@@ -136,6 +138,7 @@ class UserController {
                 if ($_SESSION) {
                     switch ($this->UserLogic->getRole($_SESSION['id'])) {
                         case 'Beheerder':
+
                             header('Location: ./?op=admin');
                             break;
                         case 'Bioscoop medewerker':
@@ -156,6 +159,12 @@ class UserController {
     public function collectAdmin($selectedPage) {
 
         if ($_SESSION['rol'] == 'Beheerder') {
+
+            switch($_GET['selectedPage']) {
+                case 'statistics' :
+                    $getReserveringen = $this->AdminLogic->Getreserveringen();
+                    break;
+            }
 
             include './view/beheerderPaginas/beheerder.php';
         } else {

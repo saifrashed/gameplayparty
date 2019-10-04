@@ -9,7 +9,7 @@ require_once 'model/DataHandler.php';
 class AuthorLogic {
 
     public function __construct() {
-        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
+        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
     }
 
     public function __destruct() {
@@ -39,6 +39,8 @@ class AuthorLogic {
     public function setContent($pageName, $content) {
         return $this->DataHandler->readsData('UPDATE paginas SET pagina_content='.$content.' WHERE pagina_titel="'.$pageName.'" ');
     }
+
+
 
     /**
      * Gets navigation links for the pages
