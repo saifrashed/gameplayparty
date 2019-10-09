@@ -167,14 +167,9 @@ class UserController {
 
         if ($_SESSION['rol'] == 'Beheerder') {
 
-<<<<<<< HEAD
-        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $html .= '<option value="'. $row['rollen_id'] .'>'. $row['omschrijving'] .'</option>';
-=======
             include './view/beheerderPaginas/beheerder.php';
         } else {
             echo 'Your not authorized to see the page.';
->>>>>>> development
         }
     }
 

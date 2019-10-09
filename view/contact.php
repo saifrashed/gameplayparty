@@ -2,19 +2,7 @@
 
 <div class="row">
     <div class="col-xs-12 col-md-6 contact-info">
-<<<<<<< HEAD
-        <h1>Contact info</h1>
-        <ul>
-            <li>zeeland</li>
-            <li>maasdriel 69217</li>
-            <li>1861 jan pieterszoon coenstraat</li>
-            <li>jack.jones@gameplayparty.nl</li>
-            <li>(656)-976-4980</li>
-
-        </ul>
-=======
         <?php echo $content ?>
->>>>>>> development
     </div>
 
     <div class="col-xs-12 col-md-6 contact-image">

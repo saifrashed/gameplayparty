@@ -40,15 +40,7 @@
 
 <div class="menu">
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <a href="?op=login">login</a>
-=======
-
->>>>>>> 2a2dc914b567b7c0ab970af602c80103172114ec
-=======
     <a class="menu-login" href="?op=login"><i class="fas fa-users"></i> login</a>
->>>>>>> development
 
     <nav class="menu-list">
         <ul>
@@ -90,17 +82,8 @@
                     echo '<h1>GamePlayParty</h1>';
             }
             ?>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <p>Voor uw beste bioscoop gameplay party's.</p>
-=======
             <p>Power to the players</p>
->>>>>>> development
             <a href="./?op=reservations" class="btn-link light">Bekijk bioscopen</a>
-=======
-            <p>Power to the players.</p>
-            <a href="./?op=reservations" class="btn-link light">Reserveer nu</a>
->>>>>>> 2a2dc914b567b7c0ab970af602c80103172114ec
         </div>
     </div>
 </div>
