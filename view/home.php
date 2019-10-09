@@ -2,7 +2,7 @@
 
 <div class="row center-xs start-md middle-xs about-block">
     <div class="col-xs-12 col-md-6 about-text">
-        <?php echo $homeContent ?>
+        <?php echo $content ?>
         <a href="./?op=reservations" class="btn-link dark">Naar bioscopen <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
@@ -18,7 +18,7 @@
         <h1>Bioscopen</h1>
     </div>
 
-    <?php  echo $bioscopen ?>
+    <?php echo $bioscopen ?>
 </div>
 
 

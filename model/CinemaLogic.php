@@ -1,22 +1,24 @@
 <?php
 require_once 'model/DataHandler.php';
 
-class CinemaLogic
-{
+class CinemaLogic {
 
+<<<<<<< HEAD
     public function __construct()
     {
         $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
+=======
+    public function __construct() {
+        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
+>>>>>>> development
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
 
     }
 
-    public function getCinemas()
-    {
-        $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN provincies');
+    public function getCinemas() {
+        $sql  = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN provincies');
         $html = '';
         // Bioscopen worden weergeven uit de database.
         while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
@@ -36,17 +38,15 @@ class CinemaLogic
         return $html;
     }
 
-    public function getCinema($bioscoopName)
-    {
+    public function getCinema($bioscoopName) {
         $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen WHERE naam="' . $bioscoopName . '"')->fetch(PDO::FETCH_ASSOC);
         return $sql;
     }
 
 
-    public function getHalls($bioscoopId)
-    {
+    public function getHalls($bioscoopId) {
         $result = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN zalen WHERE bioscoop_id= ' . $bioscoopId . '');
-        $html = '';
+        $html   = '';
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $html .= '<div class="col-xs-12 col-md-4">';
@@ -55,7 +55,7 @@ class CinemaLogic
             $html .= '<h2 style="text-align: left;">Zaal ' . $row['zaal_nummer'] . '</h2>';
             $html .= '<ul>';
             $html .= '<li>Beschikbaarheid: ' . $row['begintijd'] . ' - ' . $row['eindtijd'] . '</li>';
-            $html .= '<li>aantal plaatsen: ' . $row['aantal_nummer'] . '</li>';
+            $html .= '<li>aantal plaatsen: ' . $row['aantal_plaatsen'] . '</li>';
             $html .= '<li>Rolstoel plaatsen: ' . $row['rolstoel_plaatsen'] . '</li>';
             $html .= '<li>schermgrootte: ' . $row['schermgrootte'] . '</li>';
             $html .= '<li>faciliteiten: ' . $row['faciliteiten'] . '</li>';

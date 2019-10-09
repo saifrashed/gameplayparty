@@ -3,17 +3,26 @@ require_once 'model/ReservationLogic.php';
 require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
 require_once 'model/AuthorLogic.php';
+require_once 'model/EmployeeLogic.php';
 require_once 'model/utilities.php';
 
+session_start();
 
+
+/**
+ * Class UserController
+ *
+ * Controls user display and admin display
+ */
 class UserController {
+
     public function __construct() {
         $this->ReservationLogic = new ReservationLogic();
-        $this->CinemaLogic = new CinemaLogic();
-        $this->UserLogic = new UserLogic();
-        $this->AuthorLogic = new AuthorLogic();
-        $this->ContentLogic = new AuthorLogic();
-        $this->Utilities = new Utilities();
+        $this->CinemaLogic      = new CinemaLogic();
+        $this->UserLogic        = new UserLogic();
+        $this->AuthorLogic      = new AuthorLogic();
+        $this->EmployeeLogic    = new EmployeeLogic();
+        $this->Utilities        = new Utilities();
     }
 
     public function __destruct() {
@@ -21,8 +30,17 @@ class UserController {
 
     public function handleRequest() {
         try {
-            $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : NULL;
+            $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : null;
             switch ($op) {
+                case 'admin':
+                    $this->collectAdmin($_REQUEST['selectedPage']);
+                    break;
+                case 'employee':
+                    $this->collectEmployee($_REQUEST['selectedPage']);
+                    break;
+                case 'author':
+                    $this->collectAuthor($_REQUEST['selectedPage']);
+                    break;
                 case 'logout':
                     $this->collectAdminLogout();
                     break;
@@ -31,6 +49,9 @@ class UserController {
                     break;
                 case 'register':
                     $this->collectAdminRegister();
+                    break;
+                case 'faq':
+                    $this->collectFAQ();
                     break;
                 case 'contact':
                     $this->collectContact();
@@ -53,65 +74,85 @@ class UserController {
     }
 
     public function collectHome() {
-        $homeContent = $this->ContentLogic->getHomeContent();
+        $content   = $this->AuthorLogic->getContent('home');
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
 
     public function collectReservations() {
-        if(!$_GET['bioscoop']) {
+        $content = $this->AuthorLogic->getContent('reserveren');
+
+        if (!$_GET['bioscoop']) {
             $bioscopen = $this->CinemaLogic->getCinemas();
             include './view/reservations.php';
         } else {
             $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
-            $zalen = $this->CinemaLogic->getHalls($bioscoop['bioscoop_id']);
+            $zalen    = $this->CinemaLogic->getHalls($bioscoop['bioscoop_id']);
             include './view/single-reservations.php';
         }
     }
 
     public function collectContact() {
+        $content = $this->AuthorLogic->getContent('contact');
         include './view/contact.php';
+    }
 
+    public function collectFAQ() {
+        $content = $this->AuthorLogic->getContent('faq');
+        include './view/klantinformatie/faq.php';
     }
 
 
     /**
      * Admin views
+     *
+     * These views control the admin pages
      */
 
     public function collectAdminLogout() { // logs user off
-        session_start();
         session_destroy();
 
-        $homeContent = $this->ContentLogic->getHomeContent();
+        $content   = $this->AuthorLogic->getContent('home');
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
 
+    public function collectAdminRegister() {
+
+        $html   = '';
+        $result = $this->UserLogic->getRoles();
+
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $html .= '<option value="' . $row['rollen_id'] . '">' . $row['omschrijving'] . '</option>';
+        }
+
+        if ($_POST['email'] && $_POST['password']) {
+            $this->UserLogic->createUser($_POST['voornaam'], $_POST['achternaam'], $_POST['password'], $_POST['email'], $_POST['rol']);
+        }
+
+        include './view/beheerderPaginas/register.php';
+    }
+
     public function collectAdminLogin() { // Checks or displays login
-        session_start();
 
         if (!$_POST['email'] && !$_POST['password']) {
             include './view/beheerderPaginas/login.php';
         } else {
             $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
 
-            if(!$status) {
+            if (!$status) {
                 include './view/beheerderPaginas/login.php';
             } else {
-                if($_SESSION) {
+                if ($_SESSION) {
                     switch ($this->UserLogic->getRole($_SESSION['id'])) {
                         case 'Beheerder':
-                            include './view/beheerderPaginas/beheerder.php';
+                            header('Location: ./?op=admin');
                             break;
                         case 'Bioscoop medewerker':
-                            include './view/beheerderPaginas/bioscoop.php';
+                            header('Location: ./?op=employee');
                             break;
                         case 'Redacteur':
-                            $resultPages = $this->AuthorLogic->getPages();
-                            $pagesTable = $this->Utilities->createTable($result);
-
-                            include './view/beheerderPaginas/redacteur.php';
+                            header('Location: ./?op=author&selectedPage=home');
                             break;
                         default:
                             echo 'U bent niet ingelogd';
@@ -122,20 +163,81 @@ class UserController {
         }
     }
 
-    public function collectAdminRegister() {
+    public function collectAdmin($selectedPage) {
 
-        $html = '';
-        $result = $this->UserLogic->getRoles();
+        if ($_SESSION['rol'] == 'Beheerder') {
 
+<<<<<<< HEAD
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $html .= '<option value="'. $row['rollen_id'] .'>'. $row['omschrijving'] .'</option>';
+=======
+            include './view/beheerderPaginas/beheerder.php';
+        } else {
+            echo 'Your not authorized to see the page.';
+>>>>>>> development
         }
-
-        if($_POST['email'] && $_POST['password']) {
-            $this->UserLogic->createUser($_POST['voornaam'], $_POST['achternaam'], $_POST['password'], $_POST['email'], $_POST['rol']);
-        }
-
-        include './view/beheerderPaginas/register.php';
     }
+
+    public function collectEmployee($selectedPage) {
+
+        if ($_SESSION['rol'] == 'Bioscoop medewerker') {
+
+            $content  = $this->EmployeeLogic->getHalls($_SESSION['bioscoop_naam']);
+            $bioscoop = $this->CinemaLogic->getCinema($_SESSION['bioscoop_naam']);
+
+            switch ($selectedPage) {
+                case 'halls':
+                    include './view/beheerderPaginas/bioscoop.php';
+                    break;
+                case 'addHall':
+                    if ($_REQUEST['create'] == 'true') {
+                        $this->EmployeeLogic->addHall($_GET['bioscoopId'], $_REQUEST['zaal_nummer'], $_REQUEST['zaal_plaatsen'], $_REQUEST['zaal_rolstoel'], $_REQUEST['zaal_schermgrootte'], $_REQUEST['zaal_faciliteiten'], $_REQUEST['zaal_versies'], $_REQUEST['zaal_begintijd'], $_REQUEST['zaal_eindtijd']);
+                    }
+
+                    include './view/beheerderPaginas/bioscoop_addhall.php';
+                    break;
+                case 'updateHall':
+
+                    if ($_REQUEST['update'] == 'true') {
+                        $this->EmployeeLogic->updateHall($_GET['zaalId'], $_REQUEST['zaal_nummer'], $_REQUEST['zaal_plaatsen'], $_REQUEST['zaal_rolstoel'], $_REQUEST['zaal_schermgrootte'], $_REQUEST['zaal_faciliteiten'], $_REQUEST['zaal_versies'], $_REQUEST['zaal_begintijd'], $_REQUEST['zaal_eindtijd']);
+                    }
+
+                    $zaal = $this->EmployeeLogic->getHall($_REQUEST['zaalId']);
+                    include './view/beheerderPaginas/bioscoop_updatehall.php';
+                    break;
+                case 'deleteHall':
+                    if ($_REQUEST['delete'] == 'true') {
+                        $this->EmployeeLogic->deleteHall($_REQUEST['zaalId']);
+                    }
+                    include './view/beheerderPaginas/bioscoop.php';
+
+                    break;
+                default:
+                    include './view/beheerderPaginas/bioscoop.php';
+                    break;
+
+            }
+
+        } else {
+            echo 'Your not authorized to see the page.';
+        }
+    }
+
+    public function collectAuthor($selectedPage) {
+
+        if ($_SESSION['rol'] == 'Redacteur') {
+
+
+            if ($selectedPage && $_GET['content']) {
+                $this->AuthorLogic->setContent($selectedPage, $_GET['content']);
+            }
+
+            $navLinks = $this->AuthorLogic->getPageLinks();
+            $content  = $this->AuthorLogic->getContent($selectedPage);
+
+            include './view/beheerderPaginas/redacteur.php';
+        }
+    }
+
 }
 
