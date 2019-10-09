@@ -40,7 +40,7 @@
 
 <div class="menu">
 
-    <a href="?op=login">login</a>
+    <a class="menu-login" href="?op=login"><i class="fas fa-users"></i> login</a>
 
     <nav class="menu-list">
         <ul>
@@ -75,11 +75,14 @@
                 case 'author':
                     echo '<h1>Redacteur</h1>';
                     break;
+                case 'faq':
+                    echo '<h1>Veelgestelde vragen</h1>';
+                    break;
                 default:
                     echo '<h1>GamePlayParty</h1>';
             }
             ?>
-            <p>Voor uw beste bioscoop gameplay party's.</p>
+            <p>Power to the players</p>
             <a href="./?op=reservations" class="btn-link light">Bekijk bioscopen</a>
         </div>
     </div>

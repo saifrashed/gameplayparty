@@ -40,7 +40,7 @@ class Utilities {
             $html .= '<tr data-product-id="'.$row['product_id'].'">';
 
             foreach ($row as $value) {
-                $html .= '<td> ' . $value . ' </td>';
+                $html .= '<td> ' . $this->trimText($value) . ' </td>';
             }
 
             $html .= '<td><button class="btn btn-secondary">Bewerken</button></td> ';
@@ -70,4 +70,11 @@ class Utilities {
         return $price;
     }
 
+    public function trimText($in) {
+        $out = strlen($in) > 50 ? substr($in,0,50)."..." : $in;
+
+        return $out;
+    }
+
 }
+

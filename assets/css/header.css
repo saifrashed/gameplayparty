@@ -50,6 +50,15 @@ Menu sidebar
     z-index: 15;
 }
 
+a.menu-login {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
 .menu-open {
     transform: translateX(0%);
     transition: transform 0.5s ease-in-out;

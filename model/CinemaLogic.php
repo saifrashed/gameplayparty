@@ -49,7 +49,7 @@ class CinemaLogic {
             $html .= '<h2 style="text-align: left;">Zaal ' . $row['zaal_nummer'] . '</h2>';
             $html .= '<ul>';
             $html .= '<li>Beschikbaarheid: ' . $row['begintijd'] . ' - ' . $row['eindtijd'] . '</li>';
-            $html .= '<li>aantal plaatsen: ' . $row['aantal_nummer'] . '</li>';
+            $html .= '<li>aantal plaatsen: ' . $row['aantal_plaatsen'] . '</li>';
             $html .= '<li>Rolstoel plaatsen: ' . $row['rolstoel_plaatsen'] . '</li>';
             $html .= '<li>schermgrootte: ' . $row['schermgrootte'] . '</li>';
             $html .= '<li>faciliteiten: ' . $row['faciliteiten'] . '</li>';

@@ -3,6 +3,7 @@ require_once 'model/ReservationLogic.php';
 require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
 require_once 'model/AuthorLogic.php';
+require_once 'model/EmployeeLogic.php';
 require_once 'model/utilities.php';
 
 session_start();
@@ -20,6 +21,7 @@ class UserController {
         $this->CinemaLogic      = new CinemaLogic();
         $this->UserLogic        = new UserLogic();
         $this->AuthorLogic      = new AuthorLogic();
+        $this->EmployeeLogic    = new EmployeeLogic();
         $this->Utilities        = new Utilities();
     }
 
@@ -48,6 +50,9 @@ class UserController {
                 case 'register':
                     $this->collectAdminRegister();
                     break;
+                case 'faq':
+                    $this->collectFAQ();
+                    break;
                 case 'contact':
                     $this->collectContact();
                     break;
@@ -75,7 +80,7 @@ class UserController {
     }
 
     public function collectReservations() {
-        $content   = $this->AuthorLogic->getContent('reserveren');
+        $content = $this->AuthorLogic->getContent('reserveren');
 
         if (!$_GET['bioscoop']) {
             $bioscopen = $this->CinemaLogic->getCinemas();
@@ -88,8 +93,13 @@ class UserController {
     }
 
     public function collectContact() {
-        $content   = $this->AuthorLogic->getContent('contact');
+        $content = $this->AuthorLogic->getContent('contact');
         include './view/contact.php';
+    }
+
+    public function collectFAQ() {
+        $content = $this->AuthorLogic->getContent('faq');
+        include './view/klantinformatie/faq.php';
     }
 
 
@@ -142,7 +152,7 @@ class UserController {
                             header('Location: ./?op=employee');
                             break;
                         case 'Redacteur':
-                            header('Location: ./?op=author');
+                            header('Location: ./?op=author&selectedPage=home');
                             break;
                         default:
                             echo 'U bent niet ingelogd';
@@ -167,7 +177,42 @@ class UserController {
 
         if ($_SESSION['rol'] == 'Bioscoop medewerker') {
 
-            include './view/beheerderPaginas/bioscoop.php';
+            $content  = $this->EmployeeLogic->getHalls($_SESSION['bioscoop_naam']);
+            $bioscoop = $this->CinemaLogic->getCinema($_SESSION['bioscoop_naam']);
+
+            switch ($selectedPage) {
+                case 'halls':
+                    include './view/beheerderPaginas/bioscoop.php';
+                    break;
+                case 'addHall':
+                    if ($_REQUEST['create'] == 'true') {
+                        $this->EmployeeLogic->addHall($_GET['bioscoopId'], $_REQUEST['zaal_nummer'], $_REQUEST['zaal_plaatsen'], $_REQUEST['zaal_rolstoel'], $_REQUEST['zaal_schermgrootte'], $_REQUEST['zaal_faciliteiten'], $_REQUEST['zaal_versies'], $_REQUEST['zaal_begintijd'], $_REQUEST['zaal_eindtijd']);
+                    }
+
+                    include './view/beheerderPaginas/bioscoop_addhall.php';
+                    break;
+                case 'updateHall':
+
+                    if ($_REQUEST['update'] == 'true') {
+                        $this->EmployeeLogic->updateHall($_GET['zaalId'], $_REQUEST['zaal_nummer'], $_REQUEST['zaal_plaatsen'], $_REQUEST['zaal_rolstoel'], $_REQUEST['zaal_schermgrootte'], $_REQUEST['zaal_faciliteiten'], $_REQUEST['zaal_versies'], $_REQUEST['zaal_begintijd'], $_REQUEST['zaal_eindtijd']);
+                    }
+
+                    $zaal = $this->EmployeeLogic->getHall($_REQUEST['zaalId']);
+                    include './view/beheerderPaginas/bioscoop_updatehall.php';
+                    break;
+                case 'deleteHall':
+                    if ($_REQUEST['delete'] == 'true') {
+                        $this->EmployeeLogic->deleteHall($_REQUEST['zaalId']);
+                    }
+                    include './view/beheerderPaginas/bioscoop.php';
+
+                    break;
+                default:
+                    include './view/beheerderPaginas/bioscoop.php';
+                    break;
+
+            }
+
         } else {
             echo 'Your not authorized to see the page.';
         }
@@ -178,7 +223,7 @@ class UserController {
         if ($_SESSION['rol'] == 'Redacteur') {
 
 
-            if($selectedPage && $_GET['content']) {
+            if ($selectedPage && $_GET['content']) {
                 $this->AuthorLogic->setContent($selectedPage, $_GET['content']);
             }
 
