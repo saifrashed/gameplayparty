@@ -23,9 +23,7 @@ class EmployeeLogic {
      * @return string
      */
     public function getHalls($bioscoop) {
-        $result = $this->DataHandler->readsData('SELECT zaal_id, bioscoop_id, zaal_nummer, faciliteiten, aantal_plaatsen, versies, schermgrootte, begintijd, eindtijd FROM bioscopen NATURAL JOIN zalen WHERE naam= "' . $bioscoop . '"');
-
-        return $this->createHallsTable($result);
+        return $this->createHallsTable( $this->DataHandler->readsData('SELECT zaal_id, bioscoop_id, zaal_nummer, faciliteiten, aantal_plaatsen, versies, schermgrootte, begintijd, eindtijd FROM bioscopen NATURAL JOIN zalen WHERE naam= "' . $bioscoop . '"'));
     }
 
     /**
@@ -74,6 +72,12 @@ class EmployeeLogic {
         return $this->DataHandler->createData('INSERT INTO zalen (bioscoop_id, zaal_nummer, aantal_plaatsen, rolstoel_plaatsen, schermgrootte, faciliteiten, versies, begintijd, eindtijd) VALUES (' . $bioscoopId . ', ' . $zaalNummer . ',' . $aantalPlaatsen . ', ' . $rolstoelPlaatsen . ', "' . $schermgrootte . '", "' . $faciliteiten . '", "' . $versies . '", "' . $begintijd . '" ,"' . $eindtijd . '");');
     }
 
+    /**
+     * Deletes a hall
+     *
+     * @param $zaalId
+     * @return int
+     */
     public function deleteHall($zaalId) {
         return $this->DataHandler->deleteData('DELETE FROM zalen WHERE zaal_id='.$zaalId.'');
     }

@@ -37,7 +37,7 @@ class Utilities {
                 $tableheader = true;
             }
 
-            $html .= '<tr data-product-id="'.$row['product_id'].'">';
+            $html .= '<tr data-product-id="' . $row['product_id'] . '">';
 
             foreach ($row as $value) {
                 $html .= '<td> ' . $this->trimText($value) . ' </td>';
@@ -71,7 +71,7 @@ class Utilities {
     }
 
     public function trimText($in) {
-        $out = strlen($in) > 50 ? substr($in,0,50)."..." : $in;
+        $out = strlen($in) > 50 ? substr($in, 0, 50) . "..." : $in;
 
         return $out;
     }
