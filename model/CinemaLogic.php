@@ -1,22 +1,23 @@
 <?php
 require_once 'model/DataHandler.php';
 
-class CinemaLogic
-{
+class CinemaLogic {
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
 
     }
 
-    public function getCinemas()
-    {
-        $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN provincies');
+    /**
+     * Gets all cinemas
+     *
+     * @return string
+     */
+    public function getCinemas() {
+        $sql  = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN provincies');
         $html = '';
         // Bioscopen worden weergeven uit de database.
         while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
@@ -36,17 +37,27 @@ class CinemaLogic
         return $html;
     }
 
-    public function getCinema($bioscoopName)
-    {
+
+    /**
+     * Gets single cinema
+     *
+     * @param $bioscoopName
+     * @return mixed
+     */
+    public function getCinema($bioscoopName) {
         $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen WHERE naam="' . $bioscoopName . '"')->fetch(PDO::FETCH_ASSOC);
         return $sql;
     }
 
-
-    public function getHalls($bioscoopId)
-    {
+    /**
+     * Formats all halls in a list
+     *
+     * @param $bioscoopId
+     * @return string
+     */
+    public function displayHalls($bioscoopId) {
         $result = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN zalen WHERE bioscoop_id= ' . $bioscoopId . '');
-        $html = '';
+        $html   = '';
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $html .= '<div class="col-xs-12 col-md-4">';
@@ -55,12 +66,12 @@ class CinemaLogic
             $html .= '<h2 style="text-align: left;">Zaal ' . $row['zaal_nummer'] . '</h2>';
             $html .= '<ul>';
             $html .= '<li>Beschikbaarheid: ' . $row['begintijd'] . ' - ' . $row['eindtijd'] . '</li>';
-            $html .= '<li>aantal plaatsen: ' . $row['aantal_nummer'] . '</li>';
+            $html .= '<li>aantal plaatsen: ' . $row['aantal_plaatsen'] . '</li>';
             $html .= '<li>Rolstoel plaatsen: ' . $row['rolstoel_plaatsen'] . '</li>';
             $html .= '<li>schermgrootte: ' . $row['schermgrootte'] . '</li>';
             $html .= '<li>faciliteiten: ' . $row['faciliteiten'] . '</li>';
             $html .= '</ul>';
-            $html .= '<a href="#" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
+            $html .= '<a href="?op=reservatie& ' . $row['zaal_id'] . '" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
             $html .= '</div>';
             $html .= '</div>';
         }

@@ -40,11 +40,7 @@
 
 <div class="menu">
 
-<<<<<<< HEAD
-
-=======
-    <a href="?op=login">login</a>
->>>>>>> 65f5882a8b656ca4fc6b5b25b859356ef506f3c0
+    <a class="menu-login" href="?op=login"><i class="fas fa-users"></i> login</a>
 
     <nav class="menu-list">
         <ul>
@@ -70,17 +66,24 @@
                 case 'contact':
                     echo '<h1>Contact</h1>';
                     break;
+                case 'admin':
+                    echo '<h1>Beheerder</h1>';
+                    break;
+                case 'employee':
+                    echo '<h1>Bioscoop Beheer</h1>';
+                    break;
+                case 'author':
+                    echo '<h1>Redacteur</h1>';
+                    break;
+                case 'faq':
+                    echo '<h1>Veelgestelde vragen</h1>';
+                    break;
                 default:
                     echo '<h1>GamePlayParty</h1>';
             }
             ?>
-<<<<<<< HEAD
-            <p>Power to the players.</p>
-            <a href="./?op=reservations" class="btn-link light">Reserveer nu</a>
-=======
-            <p>Voor uw beste bioscoop gameplay party's.</p>
+            <p>Power to the players</p>
             <a href="./?op=reservations" class="btn-link light">Bekijk bioscopen</a>
->>>>>>> 65f5882a8b656ca4fc6b5b25b859356ef506f3c0
         </div>
     </div>
 </div>

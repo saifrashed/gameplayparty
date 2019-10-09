@@ -28,7 +28,6 @@ class Utilities {
 
             if ($tableheader == false) {
                 $html .= '<tr>';
-                $html .= '<th><input class="bulk-checkbox" type="checkbox" /></th>';
 
                 foreach ($row as $key => $value) {
                     $html .= '<th>  ' . $key . '</th>';
@@ -38,18 +37,13 @@ class Utilities {
                 $tableheader = true;
             }
 
-            $html .= '<tr data-product-id="'.$row['product_id'].'">';
-            $html .= '<td><input class="item-checkbox" type="checkbox" /></td> ';
-
-            $row['product_price'] = $this->priceFormating($row['product_price']);
+            $html .= '<tr data-product-id="' . $row['product_id'] . '">';
 
             foreach ($row as $value) {
-                $html .= '<td> ' . $value . ' </td>';
+                $html .= '<td> ' . $this->trimText($value) . ' </td>';
             }
 
-            $html .= '<td><button class="btn btn-primary" onclick="singleProduct(' . $row['product_id'] . ')">read</button></td> ';
-            $html .= '<td><button class="btn btn-primary">update</button></td> ';
-            $html .= '<td><button class="btn btn-danger">delete</button></td> ';
+            $html .= '<td><button class="btn btn-secondary">Bewerken</button></td> ';
             $html .= '</tr>';
         }
 
@@ -59,17 +53,6 @@ class Utilities {
             $html .= '<a href="?op=reads&page=' . $index . '">' . ($index + 1) . '</a>';
         }
 
-        $html .= '<form method="GET" style="width:300px; float:right">
-            <div class="input-group">
-                <input type="hidden" name="op" value="operation"/>
-                <input class="form-control" type="text" name="query" placeholder="Date from .. to .." aria-label="Search product...">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </form>';
-
-        $html .= '<button class="btn btn-light" style="float:right; margin-right: 10px;"><i class="fas fa-file-export"></i></i> Export to CSV </button>';
 
         return $html;
     }
@@ -87,4 +70,11 @@ class Utilities {
         return $price;
     }
 
+    public function trimText($in) {
+        $out = strlen($in) > 50 ? substr($in, 0, 50) . "..." : $in;
+
+        return $out;
+    }
+
 }
+

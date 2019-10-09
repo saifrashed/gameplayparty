@@ -1,32 +1,11 @@
 /*
-    All the styling for the header
+    All the styling for the footer
  */
-
-
-.contact-info {
-    color: #000;
-}
-
-.contact-info ul li {
-    color: #000;
-}
-
-
-.contact-image img {
-    width: 100%;
-}
 
 
 /* TABLET STYLING */
 @media (max-width: 1024px) {
 
-    .contact-service, .contact-info {
-        text-align: left;
-    }
-
-    .contact-info, .contact-image img {
-        padding: 0px;
-    }
 
 }
 

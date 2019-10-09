@@ -1,75 +1,56 @@
-/**
-
-Login page
-
+/*
+Admin pages styling
  */
 
-/*.form {*/
-    /*position: relative;*/
-    /*z-index: 1;*/
-    /*background: #FFFFFF;*/
-    /*max-width: 400px;*/
-    /*margin: 0 auto 100px;*/
-    /*padding: 45px;*/
-    /*text-align: center;*/
-    /*box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);*/
-/*}*/
+.admin-header h1 {
+    display: inline-block;
+}
 
-/*.form input {*/
-    /*font-family: "Roboto", sans-serif;*/
-    /*outline: 0;*/
-    /*background: #f2f2f2;*/
-    /*width: 100%;*/
-    /*border: 0;*/
-    /*margin: 0 0 15px;*/
-    /*padding: 15px;*/
-    /*box-sizing: border-box;*/
-    /*font-size: 14px;*/
-/*}*/
+.admin-header a {
+    float: right;
+    margin-left: 10px;
+}
 
-/*.form input[type="checkbox"] {*/
-    /*width: auto;*/
-    /*display: inline-block;*/
-/*}*/
+.admin-sidebar ul {
+    padding: 0;
+    margin: 0;
+    border: 2px solid #019a3d;
+    border-radius: .25rem;
+    list-style-type: none;
+}
 
-/*.form button {*/
-    /*font-family: "Roboto", sans-serif;*/
-    /*text-transform: uppercase;*/
-    /*outline: 0;*/
-    /*background: #4CAF50;*/
-    /*width: 100%;*/
-    /*border: 0;*/
-    /*padding: 15px;*/
-    /*color: #FFFFFF;*/
-    /*font-size: 14px;*/
-    /*-webkit-transition: all 0.3s ease;*/
-    /*transition: all 0.3s ease;*/
-    /*cursor: pointer;*/
-/*}*/
+.admin-sidebar ul li {
+    text-align: center;
+}
 
-/*.form button:hover, .form button:active, .form button:focus {*/
-    /*background: #43A047;*/
-/*}*/
+.admin-sidebar ul li a {
+    display: block;
+    width: 100%;
+    color: #019a3d;
+    border-bottom: 2px solid #019a3d;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
 
-/*.registration-message, .login-message {*/
-    /*color: red;*/
-/*}*/
+.admin-sidebar ul li a:hover {
+    background: #019a3d;
+    color: #fff;
+}
 
-/*.form .form-message {*/
-    /*margin: 15px 0 0;*/
-    /*color: #b3b3b3;*/
-    /*font-size: 12px;*/
-/*}*/
+.admin-display {
+    min-height: 50vh;
+}
 
-/*.form .form-message a {*/
-    /*color: #4CAF50;*/
-    /*text-decoration: none;*/
-/*}*/
 
-/*.form .form-message a:hover {*/
-    /*cursor: pointer;*/
-/*}*/
+/**
+Redacteur
+ */
 
-/*.form form.login-form {*/
-    /*display: block;*/
-/*}*/
+
+#editor-form button.btn {
+    float: right;
+    margin-top: 10px;
+}
