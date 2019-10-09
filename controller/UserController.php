@@ -87,7 +87,7 @@ class UserController {
             include './view/reservations.php';
         } else {
             $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
-            $zalen    = $this->CinemaLogic->getHalls($bioscoop['bioscoop_id']);
+            $zalen    = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
             include './view/single-reservations.php';
         }
     }
@@ -204,6 +204,7 @@ class UserController {
                     if ($_REQUEST['delete'] == 'true') {
                         $this->EmployeeLogic->deleteHall($_REQUEST['zaalId']);
                     }
+                    $content  = $this->EmployeeLogic->getHalls($_SESSION['bioscoop_naam']);
                     include './view/beheerderPaginas/bioscoop.php';
 
                     break;

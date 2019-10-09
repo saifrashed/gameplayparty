@@ -11,6 +11,16 @@ class UserLogic {
 
     }
 
+    /**
+     * Creates user with the given parameters
+     *
+     * @param $firstName
+     * @param $lastName
+     * @param $password
+     * @param $email
+     * @param $rol
+     * @return bool
+     */
     public function createUser($firstName, $lastName, $password, $email, $rol) {
 
         $result = $this->DataHandler->readsData('SELECT * FROM gebruikers WHERE email="' . $email . '"');
@@ -26,6 +36,13 @@ class UserLogic {
     }
 
 
+    /**
+     * Logs user in by checking combination of email & password
+     *
+     * @param $email
+     * @param $password
+     * @return bool
+     */
     public function loginUser($email, $password) {
         $result = $this->DataHandler->readsData('SELECT * FROM gebruikers WHERE email="' . $email . '";');
 
@@ -52,16 +69,33 @@ class UserLogic {
         }
     }
 
+    /**
+     * Returns all the roles
+     *
+     * @return false|PDOStatement
+     */
     public function getRoles() {
         $query = $this->DataHandler->readsData('SELECT * FROM rollen;');
         return $query;
     }
 
+    /**
+     * Checks current users role
+     *
+     * @param $userId
+     * @return mixed
+     */
     public function getRole($userId) {
         $result = $this->DataHandler->readsData('SELECT gebruikers.gebruiker_id ,gebruikers.rollen_id, rollen.rollen_id, rollen.omschrijving FROM gebruikers NATURAL JOIN rollen WHERE gebruikers.gebruiker_id = '.$userId.';')->fetch(PDO::FETCH_ASSOC);
         return $result['omschrijving'];
     }
 
+    /**
+     *
+     *
+     * @param $userId
+     * @return mixed
+     */
     public function getBioscoop($userId) {
         $result = $this->DataHandler->readsData('SELECT bioscopen.naam FROM bioscopen NATURAL JOIN gebruikers WHERE gebruiker_id='.$userId.';')->fetch(PDO::FETCH_ASSOC);
         return $result['naam'];

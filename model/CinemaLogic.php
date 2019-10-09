@@ -11,6 +11,11 @@ class CinemaLogic {
 
     }
 
+    /**
+     * Gets all cinemas
+     *
+     * @return string
+     */
     public function getCinemas() {
         $sql  = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN provincies');
         $html = '';
@@ -32,13 +37,25 @@ class CinemaLogic {
         return $html;
     }
 
+
+    /**
+     * Gets single cinema
+     *
+     * @param $bioscoopName
+     * @return mixed
+     */
     public function getCinema($bioscoopName) {
         $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen WHERE naam="' . $bioscoopName . '"')->fetch(PDO::FETCH_ASSOC);
         return $sql;
     }
 
-
-    public function getHalls($bioscoopId) {
+    /**
+     * Formats all halls in a list
+     *
+     * @param $bioscoopId
+     * @return string
+     */
+    public function displayHalls($bioscoopId) {
         $result = $this->DataHandler->readsData('SELECT * FROM bioscopen NATURAL JOIN zalen WHERE bioscoop_id= ' . $bioscoopId . '');
         $html   = '';
 
@@ -54,7 +71,7 @@ class CinemaLogic {
             $html .= '<li>schermgrootte: ' . $row['schermgrootte'] . '</li>';
             $html .= '<li>faciliteiten: ' . $row['faciliteiten'] . '</li>';
             $html .= '</ul>';
-            $html .= '<a href="#" class="btn-link dark">Reserveer nu <i class="fas fa-arrow-circle-right"></i></a>';
+            $html .= '<a href="#" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
             $html .= '</div>';
             $html .= '</div>';
         }
