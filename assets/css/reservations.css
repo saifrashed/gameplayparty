@@ -13,6 +13,11 @@
     color: #4CAF50;
 }
 
+.offers a:hover {
+    color: #4caf50;
+    text-decoration: underline;
+}
+
 .offers .offer-item {
     border: 2px solid #4CAF50;
     border-radius: 25px;

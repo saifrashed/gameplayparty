@@ -5,6 +5,12 @@
     <div class="col-xs-12 col-md-4">
         <a class="btn btn-primary" href="./?op=employee">Ga terug</a>
 
+        <?php if($_GET['update']) {?>
+            <div class="error-message">
+                <span>De geselecteerde zaal is bewerkt.</span>
+            </div>
+        <?php } ?>
+
         <form method="GET">
             <input type="hidden" name="op" value="employee"/>
             <input type="hidden" name="selectedPage" value="updateHall"/>

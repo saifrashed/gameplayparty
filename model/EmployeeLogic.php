@@ -111,7 +111,7 @@ class EmployeeLogic {
                 $tableheader = true;
             }
 
-            $html .= '<tr data-product-id="' . $row['product_id'] . '">';
+            $html .= '<tr>';
 
             foreach ($row as $value) {
                 $html .= '<td> ' . $value . ' </td>';
