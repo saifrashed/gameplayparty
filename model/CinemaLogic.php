@@ -4,7 +4,11 @@ require_once 'model/DataHandler.php';
 class CinemaLogic {
 
     public function __construct() {
+<<<<<<< HEAD
         $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
+=======
+        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
+>>>>>>> 3eeed38affe84ad7de84cd5bf9a27ec7187993e7
     }
 
     public function __destruct() {
@@ -71,7 +75,11 @@ class CinemaLogic {
             $html .= '<li>schermgrootte: ' . $row['schermgrootte'] . '</li>';
             $html .= '<li>faciliteiten: ' . $row['faciliteiten'] . '</li>';
             $html .= '</ul>';
+<<<<<<< HEAD
             $html .= '<a href="?op=reservatie& ' . $row['zaal_id'] . '" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
+=======
+            $html .= '<a href="#" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
+>>>>>>> 3eeed38affe84ad7de84cd5bf9a27ec7187993e7
             $html .= '</div>';
             $html .= '</div>';
         }
