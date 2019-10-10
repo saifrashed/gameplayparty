@@ -126,7 +126,7 @@ class UserController {
             $html .= '<option value="' . $row['rollen_id'] . '">' . $row['omschrijving'] . '</option>';
         }
 
-        if ($_POST['email'] && $_POST['password']) {
+        if (isset($_POST['email']) && isset($_POST['password'])) {
             $this->UserLogic->createUser($_POST['voornaam'], $_POST['achternaam'], $_POST['password'], $_POST['email'], $_POST['rol']);
         }
 
@@ -135,7 +135,7 @@ class UserController {
 
     public function collectAdminLogin() { // Checks or displays login
 
-        if (!$_POST['email'] && !$_POST['password']) {
+        if (!isset($_POST['email']) && !isset($_POST['password'])) {
             include './view/beheerderPaginas/login.php';
         } else {
             $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
@@ -143,7 +143,7 @@ class UserController {
             if (!$status) {
                 include './view/beheerderPaginas/login.php';
             } else {
-                if ($_SESSION) {
+                if (isset($_SESSION)) {
                     switch ($this->UserLogic->getRole($_SESSION['id'])) {
                         case 'Beheerder':
                             header('Location: ./?op=admin');

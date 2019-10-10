@@ -27,7 +27,6 @@ Admin pages styling
 .admin-sidebar ul li a {
     display: block;
     width: 100%;
-    height: 100%;
     color: #019a3d;
     border-bottom: 2px solid #019a3d;
     padding: .375rem .75rem;
