@@ -15,26 +15,22 @@ session_start();
  *
  * Controls user display and admin display
  */
-class UserController
-{
+class UserController {
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->ReservationLogic = new ReservationLogic();
-        $this->CinemaLogic = new CinemaLogic();
-        $this->UserLogic = new UserLogic();
-        $this->AuthorLogic = new AuthorLogic();
-        $this->EmployeeLogic = new EmployeeLogic();
-        $this->Utilities = new Utilities();
-        $this->AdminLogic = new AdminLogic();
+        $this->CinemaLogic      = new CinemaLogic();
+        $this->UserLogic        = new UserLogic();
+        $this->AuthorLogic      = new AuthorLogic();
+        $this->EmployeeLogic    = new EmployeeLogic();
+        $this->Utilities        = new Utilities();
+        $this->AdminLogic       = new AdminLogic();
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
     }
 
-    public function handleRequest()
-    {
+    public function handleRequest() {
         try {
             $op = isset($_REQUEST['op']) ? $_REQUEST['op'] : null;
             switch ($op) {
@@ -82,15 +78,13 @@ class UserController
 
     }
 
-    public function collectHome()
-    {
-        $content = $this->AuthorLogic->getContent('home');
+    public function collectHome() {
+        $content   = $this->AuthorLogic->getContent('home');
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
 
-    public function collectReservations()
-    {
+    public function collectReservations() {
         $content = $this->AuthorLogic->getContent('reserveren');
 
         if (!$_GET['bioscoop']) {
@@ -98,13 +92,12 @@ class UserController
             include './view/reservations.php';
         } else {
             $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
-            $zalen = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
+            $zalen    = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
             include './view/single-reservations.php';
         }
     }
 
-    public function collectReservatie()
-    {
+    public function collectReservatie() {
         $content = $this->AuthorLogic->getContent('reservatie');
 
 
@@ -113,19 +106,17 @@ class UserController
             include './view/reservatie.php';
         } else {
             $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
-            $zalen = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
+            $zalen    = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
             include './view/reservatie.php';
         }
     }
 
-    public function collectContact()
-    {
+    public function collectContact() {
         $content = $this->AuthorLogic->getContent('contact');
         include './view/contact.php';
     }
 
-    public function collectFAQ()
-    {
+    public function collectFAQ() {
         $content = $this->AuthorLogic->getContent('faq');
         include './view/klantinformatie/faq.php';
     }
@@ -137,19 +128,17 @@ class UserController
      * These views control the admin pages
      */
 
-    public function collectAdminLogout()
-    { // logs user off
+    public function collectAdminLogout() { // logs user off
         session_destroy();
 
-        $content = $this->AuthorLogic->getContent('home');
+        $content   = $this->AuthorLogic->getContent('home');
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
 
-    public function collectAdminRegister()
-    {
+    public function collectAdminRegister() {
 
-        $html = '';
+        $html   = '';
         $result = $this->UserLogic->getRoles();
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -163,8 +152,7 @@ class UserController
         include './view/beheerderPaginas/register.php';
     }
 
-    public function collectAdminLogin()
-    { // Checks or displays login
+    public function collectAdminLogin() { // Checks or displays login
 
         if (!$_POST['email'] && !$_POST['password']) {
             include './view/beheerderPaginas/login.php';
@@ -194,13 +182,12 @@ class UserController
         }
     }
 
-    public function collectAdmin($selectedPage)
-    {
+    public function collectAdmin($selectedPage) {
 
         if ($_SESSION['rol'] == 'Beheerder') {
             switch ($_GET['selectedPage']) {
                 case 'reserveringen':
-                    $x = 1;
+                    $x      = 1;
                     $bestel = $this->AdminLogic->bestellingen();
                     break;
             }
@@ -210,12 +197,11 @@ class UserController
         }
     }
 
-    public function collectEmployee($selectedPage)
-    {
+    public function collectEmployee($selectedPage) {
 
         if ($_SESSION['rol'] == 'Bioscoop medewerker') {
 
-            $content = $this->EmployeeLogic->getHalls($_SESSION['bioscoop_naam']);
+            $content  = $this->EmployeeLogic->getHalls($_SESSION['bioscoop_naam']);
             $bioscoop = $this->CinemaLogic->getCinema($_SESSION['bioscoop_naam']);
 
             switch ($selectedPage) {
@@ -257,8 +243,7 @@ class UserController
         }
     }
 
-    public function collectAuthor($selectedPage)
-    {
+    public function collectAuthor($selectedPage) {
 
         if ($_SESSION['rol'] == 'Redacteur') {
 
@@ -268,7 +253,7 @@ class UserController
             }
 
             $navLinks = $this->AuthorLogic->getPageLinks();
-            $content = $this->AuthorLogic->getContent($selectedPage);
+            $content  = $this->AuthorLogic->getContent($selectedPage);
 
             include './view/beheerderPaginas/redacteur.php';
         }
