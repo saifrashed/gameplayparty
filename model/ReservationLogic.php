@@ -7,6 +7,7 @@ class ReservationLogic {
         $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
     }
 
+
     public function __destruct() {
 
     }

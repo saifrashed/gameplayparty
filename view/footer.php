@@ -1,5 +1,6 @@
 </div>
 
+<<<<<<< HEAD
 <footer class="page-footer font-small mdb-color pt-4" style="background-color:#43a047;">
 
     <div class="container text-center text-md-left">
@@ -31,6 +32,8 @@
     </div>
 </footer>
 
+=======
+>>>>>>> adddc9fea94b2773137cc58289f93b8a81c285d7
 <!-- Scripts -->
 <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -38,5 +41,8 @@
 <script src="./assets/js/main.js"></script>
 
 </body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> adddc9fea94b2773137cc58289f93b8a81c285d7
 </html>

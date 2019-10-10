@@ -10,7 +10,7 @@
     <div class="col-xs-12 col-md-10 admin-display">
         <div class="admin-header">
             <h1><?php echo $_REQUEST['selectedPage'] ?></h1>
-            <a class="btn btn-danger" href="./?op=logout">Uitloggen <i class="fas fa-sign-out-alt"></i></a>
+            <a class="btn btn-danger" href="./?op=logout">Uitloggen</a>
             <a class="btn btn-primary" href="./?op=register">Voeg gebruiker toe <i class="fas fa-user-plus"></i></a>
         </div>
 
