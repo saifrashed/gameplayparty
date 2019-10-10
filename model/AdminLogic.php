@@ -12,7 +12,7 @@ class AdminLogic {
     }
 
     public function bestellingen() {
-        $html =  $this->createReservationsTable($this->DataHandler->readsData('SELECT * from reserveringen'));
+        $html = $this->createReservationsTable($this->DataHandler->readsData('SELECT * from reserveringen'));
         return $html;
     }
 
