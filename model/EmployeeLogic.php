@@ -9,11 +9,7 @@ require_once 'model/DataHandler.php';
 class EmployeeLogic {
 
     public function __construct() {
-<<<<<<< HEAD
         $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
-=======
-        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
->>>>>>> 3eeed38affe84ad7de84cd5bf9a27ec7187993e7
     }
 
     public function __destruct() {
