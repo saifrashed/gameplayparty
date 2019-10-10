@@ -198,12 +198,16 @@ class UserController
     {
 
         if ($_SESSION['rol'] == 'Beheerder') {
+<<<<<<< HEAD
             switch ($_GET['selectedPage']) {
                 case 'reserveringen':
                     $x = 1;
                     $bestel = $this->AdminLogic->bestellingen();
                     break;
             }
+=======
+
+>>>>>>> d431577bcc6c35c39e910b60d2d22131b4ae13ba
             include './view/beheerderPaginas/beheerder.php';
         } else {
             echo 'Your not authorized to see the page.';
