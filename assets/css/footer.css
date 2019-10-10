@@ -1,0 +1,29 @@
+/*
+    All the styling for the footer
+ */
+
+
+/* TABLET STYLING */
+@media (max-width: 1024px) {
+
+
+}
+
+@media (max-width: 980px) {
+
+}
+
+/* tablet portrait / phone landscape */
+@media (max-width: 900px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media screen and (max-width: 767px) and (min-width: 425px) {
+}
+
+/* MOBILE STYLING */
+@media (max-width: 425px) {
+
+}

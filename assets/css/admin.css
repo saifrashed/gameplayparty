@@ -1,0 +1,56 @@
+/*
+Admin pages styling
+ */
+
+.admin-header h1 {
+    display: inline-block;
+}
+
+.admin-header a {
+    float: right;
+    margin-left: 10px;
+}
+
+.admin-sidebar ul {
+    padding: 0;
+    margin: 0;
+    border: 2px solid #019a3d;
+    border-radius: .25rem;
+    list-style-type: none;
+}
+
+.admin-sidebar ul li {
+    text-align: center;
+}
+
+.admin-sidebar ul li a {
+    display: block;
+    width: 100%;
+    color: #019a3d;
+    border-bottom: 2px solid #019a3d;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+.admin-sidebar ul li a:hover {
+    background: #019a3d;
+    color: #fff;
+}
+
+.admin-display {
+    min-height: 50vh;
+}
+
+
+/**
+Redacteur
+ */
+
+
+#editor-form button.btn {
+    float: right;
+    margin-top: 10px;
+}

@@ -1,0 +1,27 @@
+/*
+    All the styling for the header
+ */
+
+.offers img {
+    width: 100%;
+    min-height: 400px;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.offers h3 {
+    padding: 5px 0px;
+    color: #4CAF50;
+}
+
+.offers a:hover {
+    color: #4caf50;
+    text-decoration: underline;
+}
+
+.offers .offer-item {
+    border: 2px solid #4CAF50;
+    border-radius: 25px;
+    padding-bottom: 10px;
+    margin: 25px 0px;
+    text-align: left;
+}
