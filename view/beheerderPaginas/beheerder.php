@@ -1,3 +1,4 @@
+
 <?php include './view/header.php' ?>
 
 <div class="row start-xs">
@@ -13,8 +14,12 @@
             <a class="btn btn-danger" href="./?op=logout">Uitloggen</a>
         </div>
 
-        <?php
-        echo $bestel ?>
+
+
+
+
+           <?php echo $bestel; ?>
+
     </div>
 </div>
 
