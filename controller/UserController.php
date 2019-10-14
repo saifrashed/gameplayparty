@@ -104,19 +104,14 @@ class UserController
     }
 
     public function collectReservatie()
+
     {
-        $content = $this->AuthorLogic->getContent('reservatie');
+        if (isset($_REQUEST['create'])) {
+            $this->ReservationLogic->addOrder($_REQUEST['firstname'], $_REQUEST['lastname'], $_REQUEST['geslacht'], $_REQUEST['nummer'], $_REQUEST['date'], $_REQUEST['aantal']);
 
-
-        if (!$_GET['bioscoop']) {
-            $bioscopen = $this->CinemaLogic->getCinemas();
-            include './view/reservatie.php';
-        } else {
-            $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
-            $zalen = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
-            include './view/reservatie.php';
         }
-    }
+        include './view/reservatie.php';
+}
 
     public function collectContact()
     {
@@ -198,16 +193,17 @@ class UserController
     {
 
         if ($_SESSION['rol'] == 'Beheerder') {
-<<<<<<< HEAD
             switch ($_GET['selectedPage']) {
                 case 'reserveringen':
-                    $x = 1;
                     $bestel = $this->AdminLogic->bestellingen();
                     break;
-            }
-=======
+                case 'statistics':
+                    $bestel = $this->AdminLogic->statistics();
+                    break;
+                default:
+                        $bestel = "";
 
->>>>>>> d431577bcc6c35c39e910b60d2d22131b4ae13ba
+            }
             include './view/beheerderPaginas/beheerder.php';
         } else {
             echo 'Your not authorized to see the page.';

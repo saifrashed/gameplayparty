@@ -4,11 +4,7 @@ require_once 'model/DataHandler.php';
 class CinemaLogic {
 
     public function __construct() {
-<<<<<<< HEAD
         $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
-=======
-        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
->>>>>>> d431577bcc6c35c39e910b60d2d22131b4ae13ba
     }
 
     public function __destruct() {
