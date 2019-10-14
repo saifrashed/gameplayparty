@@ -4,6 +4,7 @@ require_once 'model/CinemaLogic.php';
 require_once 'model/UserLogic.php';
 require_once 'model/AuthorLogic.php';
 require_once 'model/EmployeeLogic.php';
+require_once 'model/AdminLogic.php';
 require_once 'model/utilities.php';
 
 session_start();
@@ -23,6 +24,7 @@ class UserController {
         $this->AuthorLogic      = new AuthorLogic();
         $this->EmployeeLogic    = new EmployeeLogic();
         $this->Utilities        = new Utilities();
+        $this->AdminLogic       = new AdminLogic();
     }
 
     public function __destruct() {
@@ -59,6 +61,9 @@ class UserController {
                 case 'reservations':
                     $this->collectReservations();
                     break;
+                case 'reservatie':
+                    $this->collectReservatie();
+                    break;
                 case 'home':
                     $this->collectHome();
                     break;
@@ -89,6 +94,20 @@ class UserController {
             $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
             $zalen    = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
             include './view/single-reservations.php';
+        }
+    }
+
+    public function collectReservatie() {
+        $content = $this->AuthorLogic->getContent('reservatie');
+
+
+        if (!$_GET['bioscoop']) {
+            $bioscopen = $this->CinemaLogic->getCinemas();
+            include './view/reservatie.php';
+        } else {
+            $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
+            $zalen    = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
+            include './view/reservatie.php';
         }
     }
 
@@ -166,7 +185,12 @@ class UserController {
     public function collectAdmin($selectedPage) {
 
         if ($_SESSION['rol'] == 'Beheerder') {
-
+            switch ($_GET['selectedPage']) {
+                case 'reserveringen':
+                    $x      = 1;
+                    $bestel = $this->AdminLogic->bestellingen();
+                    break;
+            }
             include './view/beheerderPaginas/beheerder.php';
         } else {
             echo 'Your not authorized to see the page.';
@@ -204,7 +228,7 @@ class UserController {
                     if ($_REQUEST['delete'] == 'true') {
                         $this->EmployeeLogic->deleteHall($_REQUEST['zaalId']);
                     }
-                    $content  = $this->EmployeeLogic->getHalls($_SESSION['bioscoop_naam']);
+                    $content = $this->EmployeeLogic->getHalls($_SESSION['bioscoop_naam']);
                     include './view/beheerderPaginas/bioscoop.php';
 
                     break;

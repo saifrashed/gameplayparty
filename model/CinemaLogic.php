@@ -4,7 +4,7 @@ require_once 'model/DataHandler.php';
 class CinemaLogic {
 
     public function __construct() {
-        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
+        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
     }
 
     public function __destruct() {
@@ -62,7 +62,7 @@ class CinemaLogic {
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $html .= '<div class="col-xs-12 col-md-4">';
             $html .= '<div class="offer-item">';
-            $html .= '<img src="./assets/img/bioscopen/zalen/' . $row['zaal_id'] . '.jpg">';
+            $html .= '<img src="./assets/img/bioscopen/zalen/' . $row['zaal_nummer'] . '.jpg">';
             $html .= '<h2 style="text-align: left;">Zaal ' . $row['zaal_nummer'] . '</h2>';
             $html .= '<ul>';
             $html .= '<li>Beschikbaarheid: ' . $row['begintijd'] . ' - ' . $row['eindtijd'] . '</li>';
@@ -71,7 +71,7 @@ class CinemaLogic {
             $html .= '<li>schermgrootte: ' . $row['schermgrootte'] . '</li>';
             $html .= '<li>faciliteiten: ' . $row['faciliteiten'] . '</li>';
             $html .= '</ul>';
-            $html .= '<a href="#" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
+            $html .= '<a href="?op=reservatie&zaalId=' . $row['zaal_id'] . '" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
             $html .= '</div>';
             $html .= '</div>';
         }
