@@ -12,11 +12,7 @@ class AdminLogic {
     }
 
     public function bestellingen() {
-<<<<<<< HEAD
         $html =  $this->createReservationsTable($this->DataHandler->readsData('SELECT naam, zaal_nummer, voornaam, achternaam, geslacht, telefoonnummer, geplande_datum, aantal from reserveringen natural join bioscopen natural join zalen'));
-=======
-        $html = $this->createReservationsTable($this->DataHandler->readsData('SELECT * from reserveringen'));
->>>>>>> 6560ead2a252a32175f010cba7d05c97aa821869
         return $html;
     }
 

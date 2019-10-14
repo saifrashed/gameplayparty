@@ -1,27 +1,31 @@
 <?php include 'header.php' ?>
+
 <div class="form-group">
-    <form action="/action_page.php">
+    <form method="GET">
+        <input type="hidden" name="op" value="reservatie"/>
+        <input type="hidden" name="zaalId" value="<?php echo $bioscoop['zaal_id']?>"/>
+        <input type="hidden" name="create" value="true"/>
         <label for="fname">Voornaam: </label>
-        <input type="text" id="fname" class="form-control" name="firstname" placeholder="uw voornaam">
+        <input type="text" id="fname" class="form-control" name="firstname" placeholder="uw voornaam" required>
 <br>
         <label for="lname">Achternaam: </label>
-        <input type="text" id="lname" class="form-control" name="lastname" placeholder="uw achternaam">
+        <input type="text" id="lname" class="form-control" name="lastname" placeholder="uw achternaam" required>
 <br>
         <label for="geslacht">Geslacht: </label>
-        <select id="geslacht" class="form-control" name="geslacht">
+        <select id="geslacht" class="form-control" name="geslacht" required>
             <option value="man">Man</option>
             <option value="vrouw">Vrouw</option>
             <option value="helicopter">Helicopter</option>
         </select>
 <br>
-        <label for="lname">Telefoonnummer: </label>
-        <input type="text" id="nummer" class="form-control" name="nummer" placeholder="06-1234567">
+        <label for="nummer">Telefoonnummer: </label>
+        <input type="number" id="nummer" class="form-control" name="nummer" placeholder="06-1234567" required>
         <br>
-        <label for="lname">Datum: </label>
-        <input type="date" id="date" class="form-control" name="date" placeholder="">
+        <label for="date">Datum: </label>
+        <input type="date" id="date" class="form-control" name="date" placeholder="" required>
         <br>
-        <label for="lname">Aantal: </label>
-        <input type="number" id="aantal" class="form-control" name="aantal" placeholder="aantal">
+        <label for="aantal">Aantal personen: </label>
+        <input type="number" id="aantal" class="form-control" name="aantal" min="0" placeholder="aantal" required>
         <br>
         <input type="submit" class="btn btn-primary" value="Bestel">
     </form>
