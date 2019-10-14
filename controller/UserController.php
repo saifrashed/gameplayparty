@@ -195,14 +195,12 @@ class UserController
         if ($_SESSION['rol'] == 'Beheerder') {
             switch ($_GET['selectedPage']) {
                 case 'reserveringen':
+<<<<<<< HEAD
+=======
+                    $x      = 1;
+>>>>>>> 3c1e00ea62902b710dc971b064c8a65f1c00bffe
                     $bestel = $this->AdminLogic->bestellingen();
                     break;
-                case 'statistics':
-                    $bestel = $this->AdminLogic->statistics();
-                    break;
-                default:
-                        $bestel = "";
-
             }
             include './view/beheerderPaginas/beheerder.php';
         } else {

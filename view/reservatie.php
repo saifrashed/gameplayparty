@@ -1,4 +1,5 @@
 <?php include 'header.php' ?>
+<<<<<<< HEAD
 
 <div class="form-group">
     <form method="GET">
@@ -30,7 +31,10 @@
         <input type="submit" class="btn btn-primary" value="Bestel">
     </form>
 </div>
+=======
+>>>>>>> 3c1e00ea62902b710dc971b064c8a65f1c00bffe
 
+<button> bestel</button>
 
 <?php include 'footer.php' ?>;
 
