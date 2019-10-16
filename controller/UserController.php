@@ -45,6 +45,8 @@ class UserController {
                     break;
                 case 'logout':
                     $this->collectAdminLogout();
+                case 'order':
+                    $this->collectOrder();
                     break;
                 case 'login':
                     $this->collectAdminLogin();
@@ -83,6 +85,10 @@ class UserController {
         $bioscopen = $this->CinemaLogic->getCinemas();
         include './view/home.php';
     }
+    public function collectOrder() {
+
+        include './view/order.php';
+    }
 
     public function collectReservations() {
         $content = $this->AuthorLogic->getContent('reserveren');
@@ -99,7 +105,7 @@ class UserController {
 
     public function collectFormReservation() {
         if (isset($_REQUEST['create'])) {
-            $this->ReservationLogic->addOrder($_REQUEST['zaalId'], $_REQUEST['prijs'], $_REQUEST['firstname'], $_REQUEST['lastname'], $_REQUEST['geslacht'], $_REQUEST['nummer'], $_REQUEST['date'], $_REQUEST['aantal']);
+            $this->ReservationLogic->addOrder($_REQUEST['zaalId'], $_REQUEST['firstname'], $_REQUEST['lastname'], $_REQUEST['geslacht'], $_REQUEST['nummer'], $_REQUEST['date'], $_REQUEST['aantal'], $_REQUEST['aantaltieners'], $_REQUEST['aantalvolwasse'], $_REQUEST['straat'], $_REQUEST['postcode'], $_REQUEST['provincie'], $_REQUEST['stad']);
 
         }
         include './view/form-reservations.php';
@@ -148,7 +154,7 @@ class UserController {
 
     public function collectAdminLogin() { // Checks or displays login
 
-        if (!$_POST['email'] && !$_POST['password']) {
+        if (!$_POST['email']) {
             include './view/beheerderPaginas/login.php';
         } else {
             $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
@@ -159,7 +165,7 @@ class UserController {
                 if ($_SESSION) {
                     switch ($this->UserLogic->getRole($_SESSION['id'])) {
                         case 'Beheerder':
-                            header('Location: ./?op=admin');
+                            header('Location: ./?op=admin&selectedPage=');
                             break;
                         case 'Bioscoop medewerker':
                             header('Location: ./?op=employee');
