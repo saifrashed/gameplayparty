@@ -10,13 +10,13 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold">Links</h6>
                 <p>
-                    <a href="home.php">Home</a>
+                    <a href="?op=home">Home</a>
                 </p>
                 <p>
-                    <a href="reservation.php">Reserveren</a>
+                    <a href="?op=reservations">Reserveren</a>
                 </p>
                 <p>
-                    <a href="contact.php">Contact</a>
+                    <a href="?op=contact">Contact</a>
                 </p>
             </div>
 
