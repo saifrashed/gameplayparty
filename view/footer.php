@@ -7,7 +7,7 @@
         <div class="row text-center text-md-left mt-3 pb-3">
             <hr class="w-100 clearfix d-md-none">
 
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <div class="col-md-1 col-lg-1 col-xl-1 mx-auto mt-3">
                 <h6 class="text text-uppercase mb-4 font-weight-bold">Links</h6>
                 <div style="">
                     <p>
@@ -20,6 +20,21 @@
                         <a href="?op=contact" style="color: black;">Contact</a>
                     </p>
                 </div>                
+            </div>
+
+            <div class="col-md-1 col-lg-1 col-xl-1 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold">Policys</h6>
+                <p>
+                    <a href="#" style="color: black;">Cookies</a>
+                <p>
+                    <a href="#" style="color: black;">privacy</a>
+                </p>
+                <p>
+                    <a href="#" style="color: black;">refund</a>
+                </p>
+                <p>
+                    <a href="#" style="color: black;">terms</a>
+                </p>
             </div>
 
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
