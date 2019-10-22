@@ -45,8 +45,6 @@ class UserController {
                     break;
                 case 'logout':
                     $this->collectAdminLogout();
-                case 'order':
-                    $this->collectOrder();
                     break;
                 case 'login':
                     $this->collectAdminLogin();
@@ -64,7 +62,7 @@ class UserController {
                     $this->collectReservations();
                     break;
                 case 'reservatie':
-                    $this->collectFormReservation();
+                    $this->collectReservatie();
                     break;
                 case 'home':
                     $this->collectHome();
@@ -86,15 +84,10 @@ class UserController {
         include './view/home.php';
     }
 
-    public function collectOrder() {
-
-        include './view/order.php';
-    }
-
     public function collectReservations() {
         $content = $this->AuthorLogic->getContent('reserveren');
 
-        if (!isset($_GET['bioscoop'])) {
+        if (!$_GET['bioscoop']) {
             $bioscopen = $this->CinemaLogic->getCinemas();
             include './view/reservations.php';
         } else {
@@ -104,12 +97,18 @@ class UserController {
         }
     }
 
-    public function collectFormReservation() {
-        if (isset($_REQUEST['create'])) {
-            $this->ReservationLogic->addOrder($_REQUEST['zaalId'], $_REQUEST['firstname'], $_REQUEST['lastname'], $_REQUEST['geslacht'], $_REQUEST['nummer'], $_REQUEST['date'], $_REQUEST['aantal'], $_REQUEST['aantaltieners'], $_REQUEST['aantalvolwasse'], $_REQUEST['straat'], $_REQUEST['postcode'], $_REQUEST['provincie'], $_REQUEST['stad']);
+    public function collectReservatie() {
+        $content = $this->AuthorLogic->getContent('reservatie');
 
+
+        if (!$_GET['bioscoop']) {
+            $bioscopen = $this->CinemaLogic->getCinemas();
+            include './view/reservatie.php';
+        } else {
+            $bioscoop = $this->CinemaLogic->getCinema($_GET['bioscoop']);
+            $zalen    = $this->CinemaLogic->displayHalls($bioscoop['bioscoop_id']);
+            include './view/reservatie.php';
         }
-        include './view/form-reservations.php';
     }
 
     public function collectContact() {
@@ -155,7 +154,7 @@ class UserController {
 
     public function collectAdminLogin() { // Checks or displays login
 
-        if (!$_POST['email']) {
+        if (!$_POST['email'] && !$_POST['password']) {
             include './view/beheerderPaginas/login.php';
         } else {
             $status = $this->UserLogic->loginUser($_POST['email'], $_POST['password']);
@@ -166,7 +165,7 @@ class UserController {
                 if ($_SESSION) {
                     switch ($this->UserLogic->getRole($_SESSION['id'])) {
                         case 'Beheerder':
-                            header('Location: ./?op=admin&selectedPage=');
+                            header('Location: ./?op=admin');
                             break;
                         case 'Bioscoop medewerker':
                             header('Location: ./?op=employee');
@@ -188,14 +187,9 @@ class UserController {
         if ($_SESSION['rol'] == 'Beheerder') {
             switch ($_GET['selectedPage']) {
                 case 'reserveringen':
+                    $x      = 1;
                     $bestel = $this->AdminLogic->bestellingen();
                     break;
-                case 'statistics':
-                    $bestel = $this->AdminLogic->statistics();
-                    break;
-                default:
-                    $bestel = "";
-
             }
             include './view/beheerderPaginas/beheerder.php';
         } else {
