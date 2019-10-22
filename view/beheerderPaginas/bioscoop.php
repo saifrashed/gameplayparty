@@ -10,15 +10,14 @@
 
     <div class="col-xs-12 col-md-10 admin-display">
         <div class="admin-header">
-            <?php
-            if($_GET['selectedPage'] == 'deleteHall') {?>
+            <?php if($_GET['delete']) {?>
                 <div class="error-message">
                     <span>De geselecteerde zaal is verwijderd.</span>
                 </div>
             <?php } ?>
             <h1>Beheerder <?php echo $_SESSION['bioscoop_naam'] ?></h1>
             <a class="btn btn-danger" href="./?op=logout">Uitloggen <i class="fas fa-sign-out-alt"></i></a>
-            <a class="btn btn-primary" href="./?op=employee&selectedPage=addHall&bioscoopId=<?php echo $bioscoop['bioscoop_id'] ?>&create=">Voeg zaal toe <i class="fas fa-plus"></i></a>
+            <a class="btn btn-primary" href="./?op=employee&selectedPage=addHall&bioscoopId=<?php echo $bioscoop['bioscoop_id'] ?>">Voeg zaal toe <i class="fas fa-plus"></i></a>
         </div>
 
         <div>
