@@ -71,7 +71,7 @@ class CinemaLogic {
             $html .= '<li>schermgrootte: ' . $row['schermgrootte'] . '</li>';
             $html .= '<li>faciliteiten: ' . $row['faciliteiten'] . '</li>';
             $html .= '</ul>';
-            $html .= '<a href="?op=reservatie&zaalId=' . $row['zaal_id'] . '" class="btn-link dark">Reserveer binnenkort <i class="fas fa-arrow-circle-right"></i></a>';
+            $html .= '<a href="./?op=reservatie&zaalId=' . $row['zaal_id'] . '" class="btn-link dark">Reserveer Nu <i class="fas fa-arrow-circle-right"></i></a>';
             $html .= '</div>';
             $html .= '</div>';
         }

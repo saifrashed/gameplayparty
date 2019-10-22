@@ -19,7 +19,9 @@
 
 
 <div class="row center-xs middle-xs offers">
-    <?php echo $zalen ?>
+    <div class="row center-xs middle-xs offers">
+        <?php echo $zalen ?>
+    </div>
 </div>
 
 <?php include 'footer.php' ?>;

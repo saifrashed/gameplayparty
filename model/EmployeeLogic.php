@@ -23,7 +23,7 @@ class EmployeeLogic {
      * @return string
      */
     public function getHalls($bioscoop) {
-        return $this->createHallsTable( $this->DataHandler->readsData('SELECT zaal_id, bioscoop_id, zaal_nummer, faciliteiten, aantal_plaatsen, versies, schermgrootte, begintijd, eindtijd FROM bioscopen NATURAL JOIN zalen WHERE naam= "' . $bioscoop . '"'));
+        return $this->createHallsTable($this->DataHandler->readsData('SELECT zaal_id, bioscoop_id, zaal_nummer, faciliteiten, aantal_plaatsen, versies, schermgrootte, begintijd, eindtijd FROM bioscopen NATURAL JOIN zalen WHERE naam= "' . $bioscoop . '"'));
     }
 
     /**
@@ -79,7 +79,13 @@ class EmployeeLogic {
      * @return int
      */
     public function deleteHall($zaalId) {
-        return $this->DataHandler->deleteData('DELETE FROM zalen WHERE zaal_id='.$zaalId.'');
+        return $this->DataHandler->deleteData('DELETE FROM zalen WHERE zaal_id=' . $zaalId . '');
+
+        if ($_REQUEST['delete']) { ?>
+            <div class="error-message">
+                <span>De geselecteerde zaal is verwijderd.</span>
+            </div>
+        <?php }
     }
 
     /**
@@ -117,7 +123,7 @@ class EmployeeLogic {
                 $html .= '<td> ' . $value . ' </td>';
             }
 
-            $html .= '<td><a class="btn btn-secondary" href="./?op=employee&selectedPage=updateHall&bioscoopId=' . $row['bioscoop_id'] . '&zaalId=' . $row['zaal_id'] . '">Bewerken</a></td> ';
+            $html .= '<td><a class="btn btn-secondary" href="./?op=employee&selectedPage=updateHall&bioscoopId=' . $row['bioscoop_id'] . '&zaalId=' . $row['zaal_id'] . '&update=">Bewerken</a></td> ';
             $html .= '<td><a class="btn btn-danger" href="./?op=employee&selectedPage=deleteHall&delete=true&zaalId=' . $row['zaal_id'] . '"><i class="fas fa-times-circle"></i></a></td> ';
             $html .= '</tr>';
         }

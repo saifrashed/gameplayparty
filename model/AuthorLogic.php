@@ -37,7 +37,7 @@ class AuthorLogic {
 
 
     public function setContent($pageName, $content) {
-        return $this->DataHandler->readsData('UPDATE paginas SET pagina_content='.$content.' WHERE pagina_titel="'.$pageName.'" ');
+        return $this->DataHandler->readsData('UPDATE paginas SET pagina_content=' . $content . ' WHERE pagina_titel="' . $pageName . '" ');
     }
 
     /**

@@ -30,7 +30,7 @@ class UserLogic {
         if (strlen($password) < 5 || strlen($password) > 50) return false;
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        $this->DataHandler->createData('INSERT INTO gebruikers(voornaam, achternaam, email, password, rollen_id) VALUES("' . $firstName . '","' . $lastName . '","' . $email . '","' . $passwordHash . '","'.$rol.'")');
+        $this->DataHandler->createData('INSERT INTO gebruikers(voornaam, achternaam, email, password, rollen_id) VALUES("' . $firstName . '","' . $lastName . '","' . $email . '","' . $passwordHash . '","' . $rol . '")');
 
         return true;
     }
@@ -54,12 +54,12 @@ class UserLogic {
 
             session_start();
 
-            $_SESSION['id'] = $row['gebruiker_id'];
-            $_SESSION['voornaam'] = $row['voornaam'];
+            $_SESSION['id']         = $row['gebruiker_id'];
+            $_SESSION['voornaam']   = $row['voornaam'];
             $_SESSION['achternaam'] = $row['achternaam'];
-            $_SESSION['rol'] = $this->getRole($row['gebruiker_id']);
+            $_SESSION['rol']        = $this->getRole($row['gebruiker_id']);
 
-            if($this->getBioscoop($row['gebruiker_id'])) {
+            if ($this->getBioscoop($row['gebruiker_id'])) {
                 $_SESSION['bioscoop_naam'] = $this->getBioscoop($row['gebruiker_id']);
             }
 
@@ -86,7 +86,7 @@ class UserLogic {
      * @return mixed
      */
     public function getRole($userId) {
-        $result = $this->DataHandler->readsData('SELECT gebruikers.gebruiker_id ,gebruikers.rollen_id, rollen.rollen_id, rollen.omschrijving FROM gebruikers NATURAL JOIN rollen WHERE gebruikers.gebruiker_id = '.$userId.';')->fetch(PDO::FETCH_ASSOC);
+        $result = $this->DataHandler->readsData('SELECT gebruikers.gebruiker_id ,gebruikers.rollen_id, rollen.rollen_id, rollen.omschrijving FROM gebruikers NATURAL JOIN rollen WHERE gebruikers.gebruiker_id = ' . $userId . ';')->fetch(PDO::FETCH_ASSOC);
         return $result['omschrijving'];
     }
 
@@ -97,7 +97,7 @@ class UserLogic {
      * @return mixed
      */
     public function getBioscoop($userId) {
-        $result = $this->DataHandler->readsData('SELECT bioscopen.naam FROM bioscopen NATURAL JOIN gebruikers WHERE gebruiker_id='.$userId.';')->fetch(PDO::FETCH_ASSOC);
+        $result = $this->DataHandler->readsData('SELECT bioscopen.naam FROM bioscopen NATURAL JOIN gebruikers WHERE gebruiker_id=' . $userId . ';')->fetch(PDO::FETCH_ASSOC);
         return $result['naam'];
     }
 
