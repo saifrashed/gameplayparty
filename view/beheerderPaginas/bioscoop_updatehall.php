@@ -3,9 +3,9 @@
 
 <div class="row start-xs">
     <div class="col-xs-12 col-md-4">
-        <a class="btn btn-primary" href="./?op=employee">Ga terug</a>
+        <a class="btn btn-primary" href="./?op=employee&selectedPage=">Ga terug</a>
 
-        <?php if($_GET['update']) {?>
+        <?php if($_GET['update'] == true) {?>
             <div class="error-message">
                 <span>De geselecteerde zaal is bewerkt.</span>
             </div>
