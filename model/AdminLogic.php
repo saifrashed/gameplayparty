@@ -4,8 +4,12 @@ require_once 'model/DataHandler.php';
 class AdminLogic
 {
 
+<<<<<<< HEAD
     public function __construct()
     {
+=======
+    public function __construct() {
+>>>>>>> development
         $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
     }
 
