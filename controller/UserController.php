@@ -45,8 +45,8 @@ class UserController {
                     break;
                 case 'logout':
                     $this->collectAdminLogout();
-                case 'order':
-                    $this->collectOrder();
+                case 'order-verification':
+                    $this->collectOrderVerification();
                     break;
                 case 'login':
                     $this->collectAdminLogin();
@@ -86,11 +86,6 @@ class UserController {
         include './view/home.php';
     }
 
-    public function collectOrder() {
-
-        include './view/order.php';
-    }
-
     public function collectReservations() {
         $content = $this->AuthorLogic->getContent('reserveren');
 
@@ -105,11 +100,17 @@ class UserController {
     }
 
     public function collectFormReservation() {
-        if (isset($_REQUEST['create'])) {
+        if (isset($_REQUEST['create']) && $_REQUEST['create'] == true) {
             $this->ReservationLogic->addOrder($_REQUEST['zaalId'], $_REQUEST['firstname'], $_REQUEST['lastname'], $_REQUEST['geslacht'], $_REQUEST['nummer'], $_REQUEST['date'], $_REQUEST['aantal'], $_REQUEST['aantaltieners'], $_REQUEST['aantalvolwasse'], $_REQUEST['straat'], $_REQUEST['postcode'], $_REQUEST['provincie'], $_REQUEST['stad']);
-
+            include './view/order.php';
+        } else {
+            $services = $this->ReservationLogic->getServices();
+            include './view/form-reservations.php';
         }
-        include './view/form-reservations.php';
+    }
+
+    public function CollectOrderVerification() {
+        include './view/order-verification.php';
     }
 
     public function collectContact() {

@@ -7,6 +7,14 @@
         <input type="hidden" name="create" value="true"/>
 
         <div class="form-group">
+            <label for="dienst">Dienst: </label>
+            <select id="dienst" class="form-control" name="dienst" required>
+               <?php echo $services ?>
+            </select>
+        </div>
+
+
+        <div class="form-group">
             <label for="fname">Voornaam: </label>
             <input type="text" id="fname" class="form-control" name="firstname" placeholder="uw voornaam" required>
         </div>
@@ -74,7 +82,7 @@
             <input type="number" id="aantaltien" class="form-control" name="aantaltieners" min="0" placeholder=" 12 t/m 11 jaar" required>
         </div>
         <div class="form-group">
-            <label for="aantalvol">Aantal volwassene: </label>
+            <label for="aantalvol">Aantal volwassenen: </label>
             <input type="number" id="aantalvol" class="form-control" name="aantalvolwasse" min="0" placeholder=" vanaf 18 jaar" required>
         </div>
 

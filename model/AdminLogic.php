@@ -12,15 +12,11 @@ class AdminLogic {
     }
 
     public function bestellingen() {
-        $html = $this->createReservationsTable($this->DataHandler->readsData('SELECT naam, reservering_id, zaal_nummer, voornaam, achternaam, geslacht, telefoonnummer, geplande_datum from reserveringen natural join zalen natural join bioscopen'));
-
-        return $html;
+        return $this->createReservationsTable($this->DataHandler->readsData('SELECT naam, reservering_id, zaal_nummer, voornaam, achternaam, geslacht, telefoonnummer, geplande_datum from reserveringen natural join zalen natural join bioscopen'));
     }
 
     public function statistics() {
-        $html = $this->createStatisticTable($this->DataHandler->readsData('SELECT  SUM(aantal_kinderen), SUM(aantal_volwassene), SUM(aantal_tieners) from reserveringen'));
-
-        return $html;
+        return $this->createStatisticTable($this->DataHandler->readsData('SELECT  SUM(aantal_kinderen), SUM(aantal_volwassenen), SUM(aantal_tieners) from reserveringen'));
     }
 
     public function createReservationsTable($result) {
@@ -56,6 +52,7 @@ class AdminLogic {
             foreach ($row as $value) {
                 $html .= '<td> ' . $value . ' </td>';
             }
+
             $html .= '</tr>';
         }
 
@@ -89,15 +86,15 @@ class AdminLogic {
             $html    .= '<tr>';
             $html    .= '<td> ' . $row['SUM(aantal_kinderen)'] . ' </td>';
             $html    .= '<td> ' . $row['SUM(aantal_tieners)'] . ' </td>';
-            $html    .= '<td> ' . $row['SUM(aantal_volwassene)'] . ' </td>';
-            $poep    = $row['SUM(aantal_volwassene)'] + $row['SUM(aantal_tieners)'] + $row['SUM(aantal_kinderen)'];
+            $html    .= '<td> ' . $row['SUM(aantal_volwassenen)'] . ' </td>';
+            $poep    = $row['SUM(aantal_volwassenen)'] + $row['SUM(aantal_tieners)'] + $row['SUM(aantal_kinderen)'];
             $html    .= '<td> ' . $poep . '</td>';
             $html    .= '</tr>';
             $html    .= '<tr>';
             $html    .= '<td> €' . $row['SUM(aantal_kinderen)'] * 6.50 . ' </td>';
             $html    .= '<td> €' . $row['SUM(aantal_tieners)'] * 9 . ' </td>';
-            $html    .= '<td> €' . $row['SUM(aantal_volwassene)'] * 11 . ' </td>';
-            $poeperd = $row['SUM(aantal_volwassene)'] * 11 + $row['SUM(aantal_tieners)'] * 9 + $row['SUM(aantal_kinderen)'] * 6.50;
+            $html    .= '<td> €' . $row['SUM(aantal_volwassenen)'] * 11 . ' </td>';
+            $poeperd = $row['SUM(aantal_volwassenen)'] * 11 + $row['SUM(aantal_tieners)'] * 9 + $row['SUM(aantal_kinderen)'] * 6.50;
             $html    .= '<td> €' . $poeperd . '</td>';
             $html    .= '</tr>';
 

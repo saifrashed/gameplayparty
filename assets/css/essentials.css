@@ -22,12 +22,12 @@ body {
 
 /* buttons */
 
-a.btn-link {
+.btn-link {
     font-size: 20px;
     font-weight: bold;
 }
 
-a.btn-link.light{
+.btn-link.light{
     display: block;
     width: 200px;
     margin: 10px auto;
@@ -38,14 +38,14 @@ a.btn-link.light{
     transition: all 0.25s ease-in-out;
 }
 
-a.btn-link.light:hover {
+.btn-link.light:hover {
     color: #01983b;
     background-color: #fff;
     text-decoration: none;
 }
 
 
-a.btn-link.dark{
+.btn-link.dark{
     padding: 10px 20px;
     color: #01983b;
     border: 1px solid #01983b;
@@ -53,7 +53,7 @@ a.btn-link.dark{
     transition: all 0.25s ease-in-out;
 }
 
-a.btn-link.dark:hover {
+.btn-link.dark:hover {
     color: #fff;
     background-color: #01983b;
     border: 1px solid #fff;

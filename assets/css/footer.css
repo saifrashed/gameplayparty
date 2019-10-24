@@ -2,6 +2,18 @@
     All the styling for the footer
  */
 
+footer.main-footer {
+    padding: 25px 25px;
+    color: #FFF;
+    background-color:#43a047;
+}
+
+footer.main-footer ul {
+}
+
+footer.main-footer a {
+    color: #FFF;
+}
 
 /* TABLET STYLING */
 @media (max-width: 1024px) {

@@ -45,8 +45,7 @@ class CinemaLogic {
      * @return mixed
      */
     public function getCinema($bioscoopName) {
-        $sql = $this->DataHandler->readsData('SELECT * FROM bioscopen WHERE naam="' . $bioscoopName . '"')->fetch(PDO::FETCH_ASSOC);
-        return $sql;
+        return $this->DataHandler->readsData('SELECT * FROM bioscopen WHERE naam="' . $bioscoopName . '"')->fetch(PDO::FETCH_ASSOC);
     }
 
     /**
