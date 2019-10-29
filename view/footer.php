@@ -34,7 +34,7 @@
                     <a href="?op=refund" style="color: black;">refund</a>
                 </p>
                 <p>
-                    <a href="#" style="color: black;">terms</a>
+                    <a href="?op=terms" style="color: black;">terms</a>
                 </p>
             </div>
 
