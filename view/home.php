@@ -2,7 +2,11 @@
 
 <div class="row center-xs start-md middle-xs about-block">
     <div class="col-xs-12 col-md-6 about-text">
-        <?php echo $content ?>
+        <?php 
+            while ($row = $content->fetch(PDO::FETCH_ASSOC)) {
+            echo $row['pagina_content'];
+            }
+        ?>
         <a href="./?op=reservations" class="btn-link dark">Naar bioscopen <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 
