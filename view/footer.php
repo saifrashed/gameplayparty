@@ -8,8 +8,9 @@
             <hr class="w-100 clearfix d-md-none">
 
             <div class="col-md-1 col-lg-1 col-xl-1 mx-auto mt-3">
-                <h6 class="text text-uppercase mb-4 font-weight-bold">Links</h6>
-                <div style="">
+                <h6 class="text text-uppercase mb-4 font-weight-bold">Paginas</h6>
+                
+                <div>
                     <p>
                         <a href="?op=home" style="color: black;">Home</a>
                     </p>
@@ -25,7 +26,7 @@
             <div class="col-md-1 col-lg-1 col-xl-1 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold">Policys</h6>
                 <p>
-                    <a href="#" style="color: black;">Cookies</a>
+                    <a href="?op=cookies" style="color: black;">Cookies</a>
                 <p>
                     <a href="#" style="color: black;">privacy</a>
                 </p>

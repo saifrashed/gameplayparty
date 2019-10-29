@@ -61,11 +61,14 @@ class UserController {
                 case 'reservations':
                     $this->collectReservations();
                     break;
-                case 'reservatie':
+                case 'reservatie': 
                     $this->collectReservatie();
                     break;
                 case 'home':
                     $this->collectHome();
+                    break;
+                case 'cookies':
+                    $this->collectCookies();
                     break;
                 default:
                     $this->collectHome();
@@ -119,6 +122,11 @@ class UserController {
     public function collectFAQ() {
         $content = $this->AuthorLogic->getContent('faq');
         include './view/klantinformatie/faq.php';
+    }
+
+    public function collectCookies() {
+        $content = $this->AuthorLogic->getContent('cookies');
+        include './view/policy/cookies.php';
     }
 
 

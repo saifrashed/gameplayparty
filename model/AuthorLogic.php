@@ -32,13 +32,17 @@ class AuthorLogic {
      * @return mixed
      */
     public function getContent($pageName) {
-        return $this->DataHandler->readsData('SELECT pagina_content FROM paginas WHERE pagina_titel="' . $pageName . '"')->fetch(PDO::FETCH_ASSOC)['pagina_content'];
+        $sql='SELECT pagina_content FROM paginas WHERE pagina_titel="' . $pageName . '"';
+        $results= $this->DataHandler->readsData($sql);
+        return $results;
     }
 
 
     public function setContent($pageName, $content) {
-        return $this->DataHandler->readsData('UPDATE paginas SET pagina_content='.$content.' WHERE pagina_titel="'.$pageName.'" ');
-    }
+        $sql='UPDATE paginas SET pagina_content='.$content.' WHERE pagina_titel="'.$pageName.'" ';
+        $results= $this->DataHandler->readsData($sql);
+        return $results;
+    } 
 
     /**
      * Gets navigation links for the pages
