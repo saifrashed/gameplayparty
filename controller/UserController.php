@@ -70,6 +70,10 @@ class UserController {
                 case 'cookies':
                     $this->collectCookies();
                     break;
+                case 'privacy':
+                    $this->collectPrivacy();
+                    break;    
+
                 default:
                     $this->collectHome();
                     break;
@@ -127,6 +131,11 @@ class UserController {
     public function collectCookies() {
         $content = $this->AuthorLogic->getContent('cookies');
         include './view/policy/cookies.php';
+    }
+
+    public function collectPrivacy() {
+        $content = $this->AuthorLogic->getContent('privacy');
+        include './view/policy/privacy.php';
     }
 
 
