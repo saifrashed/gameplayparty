@@ -28,10 +28,10 @@
                 <p>
                     <a href="?op=cookies" style="color: black;">Cookies</a>
                 <p>
-                    <a href="#" style="color: black;">privacy</a>
+                    <a href="?op=privacy" style="color: black;">privacy</a>
                 </p>
                 <p>
-                    <a href="#" style="color: black;">refund</a>
+                    <a href="?op=refund" style="color: black;">refund</a>
                 </p>
                 <p>
                     <a href="#" style="color: black;">terms</a>

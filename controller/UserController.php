@@ -73,7 +73,9 @@ class UserController {
                 case 'privacy':
                     $this->collectPrivacy();
                     break;    
-
+                case 'refund':
+                    $this->collectRefund();
+                    break;
                 default:
                     $this->collectHome();
                     break;
@@ -138,6 +140,10 @@ class UserController {
         include './view/policy/privacy.php';
     }
 
+    public function collectrefund() {
+        $content = $this->AuthorLogic->getContent('refund');
+        include './view/policy/refund.php';
+    }
 
     /**
      * Admin views

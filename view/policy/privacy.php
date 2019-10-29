@@ -1,10 +1,11 @@
-<?php include 'header.php'; ?>
+<?php include './view/header.php'; ?>
 <?php  
     while ($row = $content->fetch(PDO::FETCH_ASSOC)) {
         echo $row['pagina_content'];
     }
 ?>
-<?php include 'footer.php'; ?>
+<?php include './view/footer.php'; ?>
+
 <!-- <h1>Privacybeleid</h1>
 <br>>
 <p>Ingangsdatum: October 02, 2019</p>
