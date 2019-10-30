@@ -1,4 +1,3 @@
-<h1> saif zuigt</h1>
 <?php
 function createTable($results)
 {
@@ -6,7 +5,7 @@ $tableheader = false;
 $html = "";
 $html .= '<table>';
 
-    while ($row = $results->Fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
     if ($tableheader == false) {
     $html .= '<tr>';
         foreach ($row as $key => $value) {

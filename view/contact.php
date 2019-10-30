@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
 
 <div class="row">
-    <div class="col-xs-12 col-md-6 contact-info">
+    <div class="contact-info col-xs-12 col-md-6">
         <?php 
             while ($row = $content->fetch(PDO::FETCH_ASSOC)) {
             echo $row['pagina_content'];
@@ -9,7 +9,7 @@
         ?>
     </div>
 
-    <div class="col-xs-12 col-md-6 contact-image">
+    <div class="contact-image col-xs-12 col-md-6">
         <div class="mapouter">
             <div class="gmap_canvas">
                 <iframe width="600" height="500" id="gmap_canvas"
