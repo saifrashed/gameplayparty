@@ -9,6 +9,7 @@
         <form>
             <input type="hidden" name="op" value="order-verification" />
 
+            <input type="hidden" name="zaalId" value="<?php echo $_REQUEST['zaalId'] ?>"/>
             <input type="hidden" name="dienstId" value="<?php echo $_REQUEST['dienst'] ?>"/>
             <input type="hidden" name="voornaam" value="<?php echo $_REQUEST['firstname'] ?>"/>
             <input type="hidden" name="achternaam" value="<?php echo $_REQUEST['lastname'] ?>"/>

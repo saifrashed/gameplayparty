@@ -110,6 +110,11 @@ class UserController {
     }
 
     public function CollectOrderVerification() {
+
+        if(isset($_GET)) {
+            $data = $this->ReservationLogic->getOrder($_REQUEST['zaalId'], $_REQUEST['dienstId']);
+        }
+
         include './view/order-verification.php';
     }
 

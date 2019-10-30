@@ -27,8 +27,8 @@
         <div class="form-group">
             <label for="geslacht">Geslacht: </label>
             <select id="geslacht" class="form-control" name="geslacht" required>
-                <option value="man">Man</option>
-                <option value="vrouw">Vrouw</option>
+                <option value="Mr.">Man</option>
+                <option value="Mvr.">Vrouw</option>
                 <option value="helicopter">Helicopter</option>
             </select>
         </div>

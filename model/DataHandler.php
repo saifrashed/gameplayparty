@@ -1,4 +1,5 @@
 <?php
+
 class DataHandler {
     private $host;
     private $dbdriver;
@@ -6,11 +7,10 @@ class DataHandler {
     private $username;
     private $password;
 
-    public function __construct($host, $dbdriver, $dbname, $username, $password)
-    {
-        $this->host = $host;
+    public function __construct($host, $dbdriver, $dbname, $username, $password) {
+        $this->host     = $host;
         $this->dbdriver = $dbdriver;
-        $this->dbname = $dbname;
+        $this->dbname   = $dbname;
         $this->username = $username;
         $this->password = $password;
 
@@ -19,7 +19,7 @@ class DataHandler {
             $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return true;
         } catch (PDOException $e) {
-            echo "Connection with ".$this->dbdriver." failed: ".$e->getMessage();
+            echo "Connection with " . $this->dbdriver . " failed: " . $e->getMessage();
         }
     }
 
@@ -27,31 +27,33 @@ class DataHandler {
         $this->dbh = null;
     }
 
-    public function createData($sql){
-        $this->dbh->query($sql,PDO::FETCH_ASSOC);
+    public function createData($sql) {
+        $this->dbh->query($sql, PDO::FETCH_ASSOC);
         return $this->dbh->lastInsertId();
     }
 
-    public function readData($sql){
-        return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+    public function readData($sql) {
+        return $this->dbh->query($sql, PDO::FETCH_ASSOC);
         $this->dbh->query($sql);
         return $this->dbh->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function readsData($sql){
-        return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+    public function readsData($sql) {
+        return $this->dbh->query($sql, PDO::FETCH_ASSOC);
     }
 
-    public function updateData($sql){
+    public function updateData($sql) {
         return $this->dbh->query($sql);
     }
 
-    public function deleteData($sql){
+    public function deleteData($sql) {
         $sth = $this->dbh->query($sql);
         return $sth->rowCount();
     }
 
-    public function searchData($sql){
-        return $this->dbh->query($sql,PDO::FETCH_ASSOC);
+    public function searchData($sql) {
+        return $this->dbh->query($sql, PDO::FETCH_ASSOC);
     }
-};
+}
+
+;
