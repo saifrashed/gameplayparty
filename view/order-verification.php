@@ -240,9 +240,6 @@
     </style>
 </head>
 <body>
-<pre>
-<?php echo var_dump($data) ?>
-    </pre>
 <div class="container">
     <div class="header"></div>
     <article class="row">
@@ -260,6 +257,8 @@
             <?php echo $_REQUEST['provincie'] ?><br>
             Tel.:<?php echo $_REQUEST['tel'] ?>
         </div>
+        <?php $prijs =  $_REQUEST['aantal_volwassenen'] * $data['tarief_volwassenen'] + $_REQUEST['aantal_tieners'] * $data['tarief_tieners'] + $_REQUEST['aantal_kinderen'] * $data['tarief_kinderen'] ?>
+
         <div class="col-5">
             <div class="row">
                 <div class="col-6 odd">
@@ -270,40 +269,37 @@
                     <strong>Totaal EURO:</strong><br><br>
                 </div>
                 <div class="col-6 bob">
-                    <strong>GPP-08009</strong><br>
-                    28 september, 2018<br>
-                    14 oktober, 2018<br>
-                    12:15 - 13:45<br>
-                    €163,35<br><br>
+                    <strong><?php echo '43' ?></strong><br>
+                   <?php echo 20 . date("y-m-d")?><br>
+                    <?php echo $_REQUEST['datum'] ?><br>
+                    <?php echo $data['begintijd'] ?> - <?php echo $data['eindtijd'] ?><br>
+                    € <?php echo $prijs ?><br><br>
                 </div>
             </div>
         </div>
         <div class="col-4 odd"><strong>Dienst</strong></div>
         <div class="col-3 odd"><strong>Tarief</strong></div>
         <div class="col-5 odd"><strong>Bedrag</strong></div>
-        <div class="col-4 bob"><strong>Kids GamePlayParty</strong><br>Vrijdag 14 oktober, 2018</div>
-        <div class="col-3 bob"><strong>Kinderen t/m 11 jaar:</strong> 8 @ €20,00</div>
-        <div class="col-5 bob">€160,00<br><br></div>
-        <div class="col-4 bob"><strong>Laser ULTRA</strong><br>Vrijdag 14 oktober, 2018</div>
-        <div class="col-3 bob"><strong>Toeslag:</strong> 8 @ €2,50<br><br></div>
-        <div class="col-5 bob">€ 20,00<br><br></div>
+        <div class="col-4 bob"><strong><?php echo $data['dienst_naam'] ?></strong><br><?php echo $_REQUEST['datum'] ?></div>
+        <div class="col-3 bob"><strong>Kinderen t/m 11 jaar:</strong> <br><?php echo $_REQUEST['aantal_kinderen'] ?> @ €<?php echo $data['tarief_kinderen'] ?></div>
+        <div class="col-5 bob">€ <?php echo  $_REQUEST['aantal_kinderen'] * $data['tarief_kinderen'] ?><br><br></div>
+        <div class="col-4 bob">&nbsp;<br>&nbsp;</div>
+        <div class="col-3 bob"><strong>Tieners 12 t/m 17 jaar:</strong><br> <?php echo $_REQUEST['aantal_tieners'] ?> @ €<?php echo $data['tarief_tieners'] ?></div>
+        <div class="col-5 bob">€ <?php echo  $_REQUEST['aantal_tieners'] * $data['tarief_tieners'] ?><br><br></div>
+        <div class="col-4 bob">&nbsp;<br>&nbsp;</div>
+        <div class="col-3 bob"><strong>Volwassenen 18+:</strong><br> <?php echo $_REQUEST['aantal_volwassenen']?> @  €<?php echo $data['tarief_volwassenen'] ?></div>
+        <div class="col-5 bob">€ <?php echo  $_REQUEST['aantal_volwassenen'] * $data['tarief_volwassenen'] ?><br><br></div>
         <div class="col-7 ral"><strong>Subtotaal:</strong></div>
-        <div class="col-5">€180,00</div>
+       <div class="col-5">€ <?php echo $prijs?></div>
         <div class="col-7 ral"><strong>BTW 21%:</strong></div>
-        <div class="col-5">€ 37,80</div>
+       <?php $btw = ($_REQUEST['aantal_volwassenen'] * $data['tarief_volwassenen'] + $_REQUEST['aantal_tieners'] * $data['tarief_tieners'] + $_REQUEST['aantal_kinderen'] * $data['tarief_kinderen']) / 100 * 21 ?>
+        <div class="col-5">€ <?php echo  $btw ?></div>
         <div class="col-7 ral"><strong>Totaal:</strong></div>
-        <div class="col-5">€217,80</div>
-        <div class="col-7 ral bob"><strong>Reeds voldaan:</strong></div>
-        <div class="col-5 bob">€ 54,45</div>
-        <div class="col-7 ral"><strong>Nog te voldoen (75%):</strong></div>
-        <div class="col-5 hil"><strong>€163,35</strong></div>
-        <div class="col-12"><strong>Betalingen: </strong>14-10-2018 <strong>€ 54,45 </strong>(MasterCard 1243)</div>
-        <div class="col-12 bob"><h2>Informatie over Kinepolis Jaarbeurs Utrecht</h2></div>
+        <div class="col-5">€ <?php echo $prijs + $btw ?></div>
+
+        <div class="col-12 bob"><h2>Informatie over <?php echo $data['naam'] ?></h2></div>
         <div class="col-6 bob">
-            <p>Met Kinepolis Jaarbeurs (14 zalen, 3200 stoelen) heeft Utrecht eindelijk een moderne megabioscoop in de
-                binnenstad: de grootste bioscoop van Utrecht, en een van de grootste bioscopen van Nederland. Kinepolis
-                Jaarbeurs biedt elke filmbezoeker ‘the ultimate cinema experience’: ruime en comfortabele stoelen,
-                royale beenruimte, en beeld en geluid van het allerhoogste niveau.</p>
+            <p><?php echo $data['informatie'] ?></p>
         </div>
 
         <div class="col-6 bob">
@@ -320,11 +316,9 @@
             <p><strong>Reguliere tarieven:</strong></p>
         </div>
         <div class="col-8">
-            € 10,80 | Normaal<br>
-            € 6,50 | Kinderen t/m 11 jaar<br>
-            € 8,50 | Jeugd 12 t/m 17 jaar<br>
-            € 9,00 | 65+<br>
-            € 8,70 | Studenten, CJP & BankGiro Loterij VIP-KAART
+            € <?php echo $data['tarief_volwassenen'] ?> | Normaal<br>
+            € <?php echo $data['tarief_kinderen'] ?>  | Kinderen t/m 11 jaar<br>
+            € <?php echo $data['tarief_tieners'] ?> | Jeugd 12 t/m 17 jaar<br>
         </div>
         <div class="col-4">
             <p><strong>Toeslagen:</strong></p>
@@ -352,7 +346,7 @@
             <p><strong>Bereikbaarheid auto:</strong></p>
         </div>
         <div class="col-8">
-            <p>Met de auto bereikt u Kinepolis Jaarbeurs door op de Ring Utrecht de blauwe ANWB-borden met de aanduiding
+            <p>Met de auto bereikt u <?php echo $data['naam'] ?> door op de Ring Utrecht de blauwe ANWB-borden met de aanduiding
                 'Jaarbeurs' te volgen. Rondom de Jaarbeurs is volop parkeergelegenheid. Parkeren op het Jaarbeursterrein
                 is per 1 mei gratis voor alle automobilisten die een kaartje voor de film hebben gekocht.</p>
         </div>
@@ -360,7 +354,7 @@
             <p><strong>Bereikbaarheid OV:</strong></p>
         </div>
         <div class="col-8">
-            <p>Kinepolis Jaarbeurs ligt naast de Jaarbeurshallen tegenover het Centraal Station van Utrecht en is dus
+            <p><?php echo $data['naam'] ?> ligt naast de Jaarbeurshallen tegenover het Centraal Station van Utrecht en is dus
                 uitstekend te bereiken met trein, bus en tram. Volg vanaf het Centraal Station de borden
                 ‘Jaarbeursplein’ en loop richting de Jaarbeurshallen. Binnen enkele minuten vindt u de bioscoop aan uw
                 linkerhand.</p>
@@ -376,7 +370,7 @@
             <p><strong>Rolstoeltoegankelijkheid:</strong></p>
         </div>
         <div class="col-8">
-            <p>Kinepolis Jaarbeurs heeft rolstoelplaatsen in elke zaal. Lift en mindervalidentoilet zijn ook
+            <p><?php echo $data['naam'] ?> heeft rolstoelplaatsen in elke zaal. Lift en mindervalidentoilet zijn ook
                 aanwezig.</p>
         </div>
 
