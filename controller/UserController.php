@@ -69,13 +69,24 @@ class UserController {
                 case 'home':
                     $this->collectHome();
                     break;
+                case 'cookies':
+                    $this->collectCookies();
+                    break;
+                case 'privacy':
+                    $this->collectPrivacy();
+                    break;    
+                case 'refund':
+                    $this->collectRefund();
+                    break;
+                case 'terms':
+                    $this->collectTerms();
+                    break;
                 default:
                     $this->collectHome();
                     break;
             }
         } catch (ValidationException $e) {
             $errors = $e->getErrors();
-
         }
 
     }
@@ -126,6 +137,26 @@ class UserController {
     public function collectFAQ() {
         $content = $this->AuthorLogic->getContent('faq');
         include './view/klantinformatie/faq.php';
+    }
+
+    public function collectCookies() {
+        $content = $this->AuthorLogic->getContent('cookies');
+        include './view/policy/cookies.php';
+    }
+
+    public function collectPrivacy() {
+        $content = $this->AuthorLogic->getContent('privacy');
+        include './view/policy/privacy.php';
+    }
+
+    public function collectRefund() {
+        $content = $this->AuthorLogic->getContent('refund');
+        include './view/policy/refund.php';
+    }
+
+    public function collectTerms() {
+        $content = $this->AuthorLogic->getContent('terms');
+        include './view/policy/terms.php';
     }
 
 
