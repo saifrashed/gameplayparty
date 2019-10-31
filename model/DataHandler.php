@@ -54,6 +54,4 @@ class DataHandler {
     public function searchData($sql) {
         return $this->dbh->query($sql, PDO::FETCH_ASSOC);
     }
-}
-
-;
+};
