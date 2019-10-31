@@ -2,7 +2,9 @@
 
 <div class="row">
     <div class="col-xs-12 col-md-6 contact-info">
-        <?php echo $content ?>
+        <?php while($row = $content->fetch(PDO::FETCH_ASSOC)){
+            echo $row['pagina_content'];
+        }?>
     </div>
 
     <div class="col-xs-12 col-md-6 contact-image">
