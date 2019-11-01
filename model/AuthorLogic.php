@@ -9,7 +9,7 @@ require_once 'model/DataHandler.php';
 class AuthorLogic {
 
     public function __construct() {
-        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "");
+        $this->DataHandler = new Datahandler("localhost", "mysql", "gameplayparty", "root", "Rashed112");
     }
 
     public function __destruct() {
@@ -32,8 +32,7 @@ class AuthorLogic {
      * @return mixed
      */
     public function getContent($pageName) {
-        $sql='SELECT pagina_content FROM paginas WHERE pagina_titel="' . $pageName . '"';
-        $results= $this->DataHandler->readsData($sql);
+        $results = $this->DataHandler->readsData('SELECT pagina_content FROM paginas WHERE pagina_titel="' . $pageName . '"');
         return $results;
     }
 
@@ -42,7 +41,7 @@ class AuthorLogic {
         $sql='UPDATE paginas SET pagina_content='.$content.' WHERE pagina_titel="'.$pageName.'" ';
         $results= $this->DataHandler->readsData($sql);
         return $results;
-    } 
+    }
 
     /**
      * Gets navigation links for the pages

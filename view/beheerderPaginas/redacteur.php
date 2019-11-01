@@ -21,8 +21,9 @@
 
 
             <div id="editor">
-                <?php echo $content ?>
-            </div>
+                <?php while($row = $content->fetch(PDO::FETCH_ASSOC)){
+                    echo $row['pagina_content'];
+                }?>            </div>
             <button class="btn btn-secondary" type="submit">Bewerk tekst</button>
         </form>
     </div>
